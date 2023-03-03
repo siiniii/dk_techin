@@ -25,10 +25,19 @@ FROM employees e, departments d WHERE e.department_id = d.department_id AND d.lo
 																							 WHERE l.city = 'Seattle');
 
 ------------------------------------------------------------------------------------------
-
+#정답
+# 1
 SELECT d.department_id, d.department_name, IFNULL(e.employee_id, '부서장없음')manager_id, e.first_name, e.last_name, e.hire_date
- FROM employees e JOIN departments d ON e.employees_id = d.manager_id;
-
+ FROM employees e JOIN departments d ON e.employee_id = d.manager_id;
+# 2 
+SELECT e.employee_id, e.last_name, e.first_name, e.hire_date, m.last_name, m.hire_date 
+FROM employees e JOIN employees m 
+				  ON e.manager_id = m.employee_id WHERE e.hire_date < m.hire_date;
+# 3
+SELECT e.emplouee_id, e.last_name, e.hire_date, e.department_id, (SELECT department_name FROM departments 
+WHERE department_id = e.department_id) dept_name FROM employees e 
+WHERE department_id in (SELECT department_id FROM departments 
+WHERE location_id in (SELECT location_id FROM locations WHERE city='Seattle'));
 
 
 
