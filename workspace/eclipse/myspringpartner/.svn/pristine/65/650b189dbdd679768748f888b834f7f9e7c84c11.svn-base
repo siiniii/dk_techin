@@ -1,0 +1,7 @@
+package kosa.edu.dk1;
+
+public class hsh {
+	void printHSH(){
+		
+	}
+}

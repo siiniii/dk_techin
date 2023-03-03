@@ -1,0 +1,8 @@
+package kosa.edu.dk1;
+
+public class Sini {
+
+	public static void mergeTest() {
+		
+	}
+}
