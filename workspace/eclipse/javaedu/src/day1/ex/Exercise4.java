@@ -1,8 +1,8 @@
-package day1;
+package day1.ex;
 
 public class Exercise4 {
 	public static void main(String[] args) {
-		
+
 //	1. int 타입의 변수 number 를 선언하고 100 이라는 값을 저장한다.
 		int number = 100;
 //	2. int 타입의 변수 result 를 선언한다.
