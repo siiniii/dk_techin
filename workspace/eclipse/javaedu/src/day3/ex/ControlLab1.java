@@ -16,13 +16,12 @@ public class ControlLab1 {
 				System.out.println(sum);
 				count++;
 				sum = 0;
-
 			} else if (no == 11 || no == 17 || no == 19) {
 				System.out.printf("%d회 반복함", count);
 				break;
 			} else {
 				System.out.println("재수행");
-				continue;
+				// continue;
 			}
 		}
 	}
