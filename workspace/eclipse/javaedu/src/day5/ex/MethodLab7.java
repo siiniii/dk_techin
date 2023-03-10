@@ -3,7 +3,9 @@ package day5.ex;
 public class MethodLab7 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		printArray(powerArray(2));
+		printArray(powerArray(3));
+		printArray(powerArray(4));
 
 	}
 	
@@ -18,6 +20,9 @@ public class MethodLab7 {
 	}
 	
 	static void printArray(int[] printArr) {
-		
+		for(int i=0; i<arr.length-1; i++) {
+			System.out.print(arr[i]+", ");
+		}
+		System.out.println(arr[arr.length-1]);
 	}
 }
