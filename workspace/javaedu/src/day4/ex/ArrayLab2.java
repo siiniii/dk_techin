@@ -11,14 +11,14 @@ public class ArrayLab2 {
 
 		for (int i = 0; i < no.length; i++) {
 			sum += no[i];
-			if (i == no.length - 1) {
+			if(i ==no.length-1) {
 				System.out.println(no[i]);
 				sum += no[i];
 				break;
 			}
-			System.out.print(no[i] + ",");
+			System.out.print(no[i]+",");
 		}
-
+		
 		System.out.println("모든 원소의 합 :" + sum);
 
 	}

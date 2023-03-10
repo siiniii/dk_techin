@@ -8,21 +8,6 @@ public class TwoArrayLab1 {
 						  {26, 28, 30, 32},
 						  {34, 36, 38, 40}
 		};
-		
-		
-		int size = 4;
-		int[][] arr = new int[size][size];
-		int num = 0;
-
-		for (int i = 00; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				arr[i][j] = 10 + (num * 2);
-				num++;
-
-			}
-		}
-		
-		
 		System.out.println("1행 1열의 데이터 : " + twoA[0][0]);
 		System.out.println("3행 4열의 데이터 : " + twoA[twoA.length-2][twoA.length-1]);
 		System.out.println("행의 갯수 : " + twoA.length);
@@ -46,19 +31,12 @@ public class TwoArrayLab1 {
 		System.out.println();
 		
 		System.out.print("왼쪽 대각선 데이터들 : ");
-		
 		for (int row = 0; row < twoA.length; row++) {
 			for (int col = 0; col < twoA[row].length; col++) {
 				if(row == col) {
 				System.out.print(twoA[row][col] + " ");
 				}
 			}
-		}
-		System.out.println();
-/////////////////////////////////
-		System.out.print("왼쪽 대각선 데이터들 : ");
-		for (int i = 0; i<arr.length ;i++) {
-				System.out.print(arr[i][i]+ " ");
 		}
 		System.out.println();
 		
@@ -72,11 +50,6 @@ public class TwoArrayLab1 {
 			}
 		}
 		System.out.println();
-/////////////////////////////////
-		System.out.print("오른쪽 대각선 데이터들 : ");
-		for(int i = 0; i<arr.length;i++)
-			System.out.println(arr[i][arr.length-1 -i] + " ");
-	
 	}
 
 }
