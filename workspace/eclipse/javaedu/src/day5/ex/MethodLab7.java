@@ -20,9 +20,9 @@ public class MethodLab7 {
 	}
 	
 	static void printArray(int[] printArr) {
-		for(int i=0; i<arr.length-1; i++) {
-			System.out.print(arr[i]+", ");
+		for(int i=0; i<printArr.length-1; i++) {
+			System.out.print(printArr[i]+", ");
 		}
-		System.out.println(arr[arr.length-1]);
+		System.out.println(printArr[printArr.length-1]);
 	}
 }

@@ -19,11 +19,13 @@ public class MethodLab10 {
 		MethodLab7.printArray(a2);
 	}
 
-	void powerArray(int[] arr, int no) {
+	static void powerArray(int[] arr, int no) {
 		if (no >= 2 && no <= 5) {
 			for (int i = 0; i < arr.length; i++) {
 				arr[i] = arr[i] * no;
 			}
 		}
 	}
+	
+	
 }

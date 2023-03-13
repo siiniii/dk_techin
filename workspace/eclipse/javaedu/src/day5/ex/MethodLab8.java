@@ -9,6 +9,7 @@ public class MethodLab8 {
 		System.out.printf("호출 4 : %d", addEven(100, 101, 103));
 	}
 
+	// 매기변수에만 사용가능하다 int ... == int[] (int 데이터 0개이상 전달받을것이다)
 	static int addEven(int... p) {
 		int sum = -1;
 		for (int i = 0; i < p.length; i++) {
@@ -21,4 +22,5 @@ public class MethodLab8 {
 		return sum + 1;
 		}
 	}
+	
 }

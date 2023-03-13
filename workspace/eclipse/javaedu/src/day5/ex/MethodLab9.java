@@ -7,8 +7,8 @@ public class MethodLab9 {
 		System.out.println(isRightTriangle(1, 2, 3));
 	}
 
-	static boolean isRightTriangle(int w, int h, int l) {
-		if (l * l == w * w + h * h) {
+	static boolean isRightTriangle(int width, int height, int hypo) {
+		if (hypo * hypo == width * width + height * height) {
 			return true;
 		} else {
 			return false;
