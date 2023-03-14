@@ -41,6 +41,7 @@ public class CalculatorTest {
 		Scanner sc = new Scanner(System.in);
 		int end = 1;
 		while (end == 1) {
+			System.out.println("계산하고자하는 숫자 두개를 입력해주세요 : ");
 			int number1 = sc.nextInt();
 			int number2 = sc.nextInt();
 			CalculatorExpr ce = new CalculatorExpr(number1, number2);

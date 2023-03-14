@@ -3,19 +3,20 @@ package day6.ex;
 import java.util.Scanner;
 
 class GradeExpr {
-	int[] jumsu;
+	private int[] jumsu;
 	int sum = 0;
 
-	GradeExpr(int jumsu[]) {
+	GradeExpr(int[] jumsu) {
 		this.jumsu = jumsu;
 
 	}
 
 	double getAverage() {
-		for (int i = 0; i < jumsu.length; i++) {
-			sum += jumsu[i];
-		}
-		return sum / jumsu.length;
+//		for (int i = 0; i < jumsu.length; i++) {
+//			sum += jumsu[i];
+//		}
+		return getTotal() / (double) jumsu.length;
+		//return sum / jumsu.length;
 	}
 
 	int getTotal() {
@@ -50,7 +51,7 @@ class GradeExpr {
 public class GradeTest {
 
 	public static void main(String[] args) {
-		System.out.print("점수를 입력하세요 : ");
+		System.out.print("처리하고자하는 점수의 개수를 입력하세요 : ");
 
 		Scanner sc = new Scanner(System.in);
 		int[] arr = new int[sc.nextInt()];
@@ -60,9 +61,7 @@ public class GradeTest {
 			arr[i] = sc.nextInt();
 			if (i == 0) {
 				System.out.print("점수들 : ");
-			} else {
-				System.out.print(arr[i]);
-			}
+			} System.out.print(arr[i]);
 			if (i < arr.length - 1) {
 				System.out.print(",");
 			}
