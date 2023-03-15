@@ -1,4 +1,4 @@
-package day7.exercise;
+package day7.ex.exercise;
 
 public class Human {
 	private String name;
