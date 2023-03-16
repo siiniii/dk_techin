@@ -1,4 +1,4 @@
-package day8;
+package day9;
 
 interface InterCalculator {
 
@@ -6,13 +6,13 @@ interface InterCalculator {
 
 	int sub(int x, int y);
 
-	default int mul(int x, int y) {
-		return x * y;
-	}
-	
-	static void print() {		 
-        System.out.println("사칙 연산 처리");
-    }
+//	default int mul(int x, int y) {
+//		return x * y;
+//	}
+//	
+//	static void print() {		 
+//        System.out.println("사칙 연산 처리");
+//    }
 }
 
 class Calculator implements InterCalculator {
@@ -41,12 +41,12 @@ class Calculator implements InterCalculator {
 }
 
 public interface InterfaceTest3 {
-	public static void main(String[] args) {
-		InterCalculator cal = new Calculator();
-		System.out.println("5 * 3 = " + cal.mul(5, 3));
-		System.out.println("5 + 3 = " + cal.add(5, 3));
-		System.out.println("5 - 3 = " + cal.sub(5, 3));
-		System.out.println("5 - 3 = " + ((Calculator)cal).div(5, 3));
-		InterCalculator.print();		
-	}
+//	public static void main(String[] args) {
+//		InterCalculator cal = new Calculator();
+//		System.out.println("5 * 3 = " + cal.mul(5, 3));
+//		System.out.println("5 + 3 = " + cal.add(5, 3));
+//		System.out.println("5 - 3 = " + cal.sub(5, 3));
+//		System.out.println("5 - 3 = " + ((Calculator)cal).div(5, 3));
+//		InterCalculator.print();		
+//	}
 }

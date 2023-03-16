@@ -1,13 +1,16 @@
-package day8;
+package day9;
 
 interface Printable {
+	// 명시적 초기화를 꼭 해주어야한다.
 	public static final int PRINT_TYPE1 = 1;
 	static final int PRINT_TYPE2 = 2;
 	final int PRINT_TYPE3 = 3;
 	int PRINT_TYPE4 = 4;
 
 	public abstract void print(int type);
+
 	abstract void setPage(int su);
+
 	boolean isAvailable();
 }
 
@@ -59,12 +62,16 @@ class Triangle3 extends Shape3 {
 public class InterfaceTest1 {
 	public static void main(String args[]) {
 		printOut(new Circle3());
-		//printOut(new Rectangle3()); // 컴파일 오류가 발생하는 행
+//		 printOut(new Rectangle3()); // 컴파일 오류가 발생하는 행
 	}
 
 	static void printOut(Printable prt) {
 		prt.setPage(100);
-		((Shape3) prt).setColor("파란색");
+		((Circle3)prt).draw();
+		((Circle3)prt).setColor("파란색");
+		Circle3 cObj = (Circle3)prt;
+		cObj.draw();
+		cObj.setColor("노란색");
 		if (prt.isAvailable())
 			prt.print(Printable.PRINT_TYPE2);
 	}
