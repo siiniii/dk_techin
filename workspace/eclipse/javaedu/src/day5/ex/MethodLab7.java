@@ -19,7 +19,7 @@ public class MethodLab7 {
 		
 	}
 	
-	static void printArray(int[] printArr) {
+	public static void printArray(int[] printArr) {
 		for(int i=0; i<printArr.length-1; i++) {
 			System.out.print(printArr[i]+", ");
 		}
