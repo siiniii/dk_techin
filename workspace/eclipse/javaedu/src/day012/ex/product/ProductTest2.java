@@ -1,14 +1,11 @@
 package day012.ex.product;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.List;
 
 public class ProductTest2 {
 	public static void main(String[] args) {
-		LinkedList<Product2> list = new LinkedList<Product2>();
+		LinkedList<Product2> list = new LinkedList<>();
 
 		list.add(new Product2("p100", "TV", "20000"));
 		list.add(new Product2("p200", "Computer", "10000"));
