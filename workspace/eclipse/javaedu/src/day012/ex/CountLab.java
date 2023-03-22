@@ -23,9 +23,10 @@ public class CountLab {
 				StringTokenizer st = new StringTokenizer(data);
 				while (st.hasMoreTokens()) {
 					String token = st.nextToken();
-					if (token.equals("yesterday"))
+					if (token.equals("yesterday")||token.equals("yesterday."))
 						cnt++;
 				}
+				
 			}
 			System.out.printf("yesterday 라는 단어는 %d개 있습니다.", cnt);
 		} catch (FileNotFoundException fnfe) {

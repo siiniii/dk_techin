@@ -13,16 +13,18 @@ public class FileOutLab {
 	 public static void main(String[] args) {
 		 String path = "c:/Temp";
 			File dir = new File(path);
+			
 			if (!dir.exists()) {
 				dir.mkdirs();
 			}
 			try (FileWriter writer = new FileWriter("c:/Temp/event.txt", true);
 					PrintWriter out = new PrintWriter(writer);) {
+				
 				LocalDate ld1 = LocalDate.of(2023, 5, 5);
 				DayOfWeek day1 = ld1.getDayOfWeek();
 				String korday1 = day1.getDisplayName(TextStyle.FULL, Locale.KOREAN);
-
 				out.printf("2023년년 5월 5일은 %s입니다.\r\n", korday1);
+				
 				LocalDate ld2 = LocalDate.of(2023, 6, 6);
 				DayOfWeek day2 = ld2.getDayOfWeek();
 				String korday2 = day2.getDisplayName(TextStyle.FULL, Locale.KOREAN);

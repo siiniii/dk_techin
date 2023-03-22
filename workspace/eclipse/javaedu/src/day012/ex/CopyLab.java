@@ -10,27 +10,28 @@ import java.time.LocalDate;
 public class CopyLab {
 
 	public static void main(String[] args) throws Exception {
-		
+
 		FileReader reader = null;
-		// 시간 
+		
+		// 시간
 		LocalDate date = LocalDate.now();
 		int yy = date.getYear();
 		int MM = date.getMonthValue();
 		int dd = date.getDayOfMonth();
-		
-		// 파일저장 
-		String name = String.format("c:/iotest/sample_%d_%d_d.txt", yy,MM,dd);
-		
-		try (FileWriter writer = new FileWriter(name, true);
+
+		// 파일저장
+		String name = String.format("c:/iotest/sample_%d_%d_%d.txt", yy, MM, dd);
+
+		try (FileWriter writer = new FileWriter(name, true); 
 				PrintWriter out = new PrintWriter(writer);) {
-		// 파일읽기
+			// 파일읽기
 			reader = new FileReader("c:/iotest/sample.txt");
-				
+
 			while (true) {
 				int data = reader.read();
 				if (data == -1)
 					break;
-				char ch = (char)data;
+				char ch = (char) data;
 				out.print(ch);
 			}
 			System.out.println("저장 완료되었습니다.");
@@ -45,7 +46,7 @@ public class CopyLab {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		
+
 		}
 	}
 
