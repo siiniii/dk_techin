@@ -1,4 +1,4 @@
-package day013;
+package day014;
 
 class Outer {
 	void pr() {
@@ -12,7 +12,7 @@ class Outer {
 	}
 
 	static class Static_Inner {
-		void pr() {
+		static void pr() {
 			System.out.println("Static_Inner's pr() Method !!");
 		}
 	}
@@ -20,7 +20,7 @@ class Outer {
 
 public class InnerTest1 {
 	public static void main(String args[]) {
-		new Outer.Static_Inner().pr();
+		Outer.Static_Inner.pr();
 		Outer o = new Outer();
 		o.pr();
 		Outer.Inner i = o.new Inner();

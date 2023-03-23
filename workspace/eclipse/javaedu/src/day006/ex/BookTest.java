@@ -1,25 +1,5 @@
 package day006.ex;
 
-class Book {
-	String title;
-	String author;
-	int price;
-
-	Book() {
-		this("이것이 자바다", "신용권", 36000);
-	}
-
-	Book(String title, String author, int price) {
-		this.title = title;
-		this.author = author;
-		this.price = price;
-	}
-
-	void getBookInfo() {
-		System.out.printf("%s\t%s\t%,d원\n ", title, author, price);
-	}
-}
-
 public class BookTest {
 
 	public static void main(String[] args) {

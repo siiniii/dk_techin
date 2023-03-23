@@ -1,0 +1,64 @@
+
+create table visitor (
+  id int primary key auto_increment,
+  name varchar(15) not null,
+  writedate datetime not null,
+  memo varchar(100) not null
+);
+
+
+
+
+
+create table imgtest (
+    id int primary key auto_increment,
+    filename  varchar(45) not null,
+    imgcontent  mediumblob not null
+);
+
+
+insert into visitor (name, writedate, memo) values('둘리', now(), '호이호이~~');
+insert into visitor (name, writedate, memo) values('또치', '2021-12-25', '난 타조라네^^');
+insert into visitor (name, writedate, memo) values('도우너', '1990-8-20', '깐따삐아 별이서 왔어용');
+
+select * from visitor;
+
+
+create table meeting(
+    id int primary key auto_increment,
+    name  varchar(24),
+    title  varchar(120),
+    meetingdate  datetime
+);
+
+
+insert into meeting (name, title, meetingdate) values('유니코', '일식먹을사람 메뉴 정하세요', '2023-04-23 12:30');
+insert into meeting (name, title, meetingdate) values('듀크', '중식먹을사람 메뉴 정하세요', '2023-03-28 15:00');
+insert into meeting (name, title, meetingdate) values('턱시', '분식먹을사람 메뉴 정하세요', '2023-03-31 10:30');
+
+select * from meeting;
+
+
+
+create table reply (
+    id int primary key auto_increment,
+    name varchar(30),
+    content varchar(120),
+    refid int  references meeting (id) on delete cascade
+);
+
+
+insert into reply (name, content, refid) values ('도우너', '탕수육', 1);
+insert into reply (name, content, refid) values ('고길동', '짜장면', 1);
+insert into reply (name, content, refid) values ('또치', '초밥', 3);
+insert into reply (name, content, refid) values ('희동이', '깐풍기', 1);
+insert into reply (name, content, refid) values ('둘리', '우동', 3);
+
+
+select * from reply;    
+
+
+select * from information_schema.table_constraints where table_name = 'reply';
+
+
+
