@@ -19,7 +19,7 @@ public class SelectEmpLab {
 		System.out.println(random);
 	
 		if (random) {
-			String sql = "SELECT ename, format(sal, 0) sal FROM emp";
+			String sql = "SELECT ename, FORMAT(sal, 0) sal FROM emp";
 			ResultSet rs = stmt.executeQuery(sql);	
 				while (rs.next()) {
 					System.out.printf("%s 직원의 월급은 %s달러입니다.\n", rs.getString("ename"), rs.getString("sal"));
@@ -42,6 +42,4 @@ public class SelectEmpLab {
 		} 
 	
 }	
-
-
 

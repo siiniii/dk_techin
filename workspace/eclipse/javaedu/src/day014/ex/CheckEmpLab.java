@@ -21,8 +21,7 @@ public class CheckEmpLab {
 			while (true) {
 				System.out.print("직원의 이름을 검색하세요 : ");
 				String name = sc.next();
-				sql = "SELECT ename, DATE_FORMAT(hiredate, '%Y년 %m월 %d일') hiredate, deptno FROM emp WHERE ename= \'"
-						+ name + "\'";
+				sql = "SELECT ename, DATE_FORMAT(hiredate, '%Y년 %m월 %d일') hiredate, deptno FROM emp WHERE ename= \'" + name + "\'";
 				ResultSet rs = stmt.executeQuery(sql);
 
 				if ((rs.next())) {
@@ -32,9 +31,11 @@ public class CheckEmpLab {
 					System.out.printf("%s 직원은 근무하지 않습니다.", name);
 				}
 				sc.nextLine();
+				
 				System.out.print("그만 검색하려면 1을 입력하시고, 계속하려면 2를 입력하세요.");
 				int no = sc.nextInt();
 				if (no == 1) {
+					System.out.println("프로그램을 종료합니다.");
 					break;
 				} else if (no != 2) {
 					System.out.println("잘못된 값을 입력해서 프로그램이 종료되었습니다.");
