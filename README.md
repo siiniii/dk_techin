@@ -1,6 +1,6 @@
-
+<div align="center">
 ![dktechin_Logo](https://user-images.githubusercontent.com/110361222/227942032-e1ed4203-b0ec-4dbc-a70f-59a1528e0696.jpg)
-
+</div>
 
 # <p align="center"><i class="fa-solid fa-wrench-simple" style="color: #fae300;"></i>What I learning in this course</p>
 <div align= "center"> 
