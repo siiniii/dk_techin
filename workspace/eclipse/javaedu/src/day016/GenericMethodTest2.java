@@ -15,11 +15,12 @@ public class GenericMethodTest2 {
 			return false;
 	}	
 	public static void main(String[] args) {		
-		System.out.println(whichBig(100, 200));
-		System.out.println(whichBig(100, 20));
-		System.out.println(whichBig(100.0, 20.0));
+		System.out.println(whichBig(100, 200)); // 200
+		System.out.println(whichBig(100, 20)); // 100
+		System.out.println(whichBig(100.0, 20.0)); // 100.0
+		// Number를 확장한 자식만 올 수 있기 때문에 error
 		//System.out.println(whichBig("100", "20"));
-		System.out.println(equalValue(100, 100));
-		System.out.println(equalValue(200, 100));
+		System.out.println(equalValue(100, 100)); // true
+		System.out.println(equalValue(200, 100)); // false
 	}
 }
