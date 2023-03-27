@@ -1,0 +1,60 @@
+제출 소스명 : 소스26.zip
+메일 제목 : JDBC실습4-XXX
+
+[ JDBC 실습 4 ]
+
+(1) model 구현(패키지 : mvclab.model)
+      -  student 테이블에 매핑되는 StudentDTO 클래스를 구현한다.
+      -  StudentDAO 클래스를 구현한다.(DB 서버 접속은 day16.mvc.MySQLConnect 사용)
+
+	boolean insertStudent(StudentDTO dto)
+	List<StudentDTO> getAllStudent()
+	int getScore(StudentDTO dto)   ----> 존재하지 않는 학생명으로 호출한 경우에는 -1 리턴
+	boolean updateStudent(StudentDTO dto)
+          	boolean deleteStudent(StudentDTO dto)
+
+	
+
+(2) controller 구현(패키지 : mvclab.controller)    
+      - 구현 클래스명 : StudentController
+         void printAll()   -->  StudentDAO의 getAllStudent()를 호출하고 결과를 화면에 출력한다.
+         void printScore(String name) --> StudentDAO의  getScore()를 호출하고
+                                                     리턴 결과가 0보다 작으면 이면 "XX 학생은 존재하지 않습니다."를 출력한다.
+                                                     아니면 "XXX 학생의 점수는 XX 입니다"를 출력한다.
+         void insert(String name, int score) --> StudentDAO의  insertStudent()를 호출한다.
+                                                             리턴결과가 true 이면 "입력 성공"을 출력한다.
+	  		                       리턴결과가 false 이면 "입력 실패"를 출력한다.
+         void update(String name, int score) --> StudentDAO의  updateStudent()를 호출한다.
+                                                             리턴결과가 true 이면 "XX 학생의 점수를 변경했습니다."을 출력한다.
+	  		                       리턴결과가 false 이면 "XX 학생은 존재하지 않습니다."를 출력한다.
+         void delete(String name) -------------> StudentDAO의  deleteStudent()를 호출한다.
+                                                             리턴결과가 true 이면 "XX 학생의 데이터를 삭제했습니다."을 출력한다.
+	  		                       리턴결과가 false 이면 "XX 학생은 존재하지 않습니다."를 출력한다.
+  
+
+
+(3) view 구현(패키지 : mvclab.view)    
+      -  구현 클래스명 : StudentApp
+          수행을 시작하면 다음 메시지를 출력한다.
+
+	처리하려는 기능을 선택하세요.
+	1. 학생 정보 출력 
+	2. 학생 정보 입력
+        	3. 학생 정보 삭제
+	4. 학생 정보 수정
+	5. 학생 점수 확인
+	6. 종료
+	입력 :
+
+           	1을 입력하면 StudentController 의 printAll() 을 호출한다.
+           	2를 입력하면 학생의 이름과 점수를 표준입력받아서 StudentController 의 insert() 를 호출한다.
+           	3을 입력하면 삭제하려는 학생 이름을 입력받아 StudentController 의 delete() 를 호출한다. 	
+	4를 입력하면 수정하려는 학생 이름과 점수를 입력받아 StudentController 의 update() 를 호출한다.
+ 	5를 입력하면 점수를 확인하고 싶은 학생의 이름을 입력받아 StudentController 의 printScore() 를 호출한다. 
+	6을 입력하면 프로그램 수행으로 종료한다.
+
+           모든 기능을 수행하고 결과를 출력한 다음에는 위의 메뉴를 재 출력하고 사용자 입력을 받는다.
+         
+ 
+
+소스 구현 순서 : DTO -> DAO -> Controller -> View

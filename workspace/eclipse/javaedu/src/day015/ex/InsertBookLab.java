@@ -31,6 +31,7 @@ public class InsertBookLab {
 				String kind = scan.nextLine();
 				pstmt.setString(1,  title);
 				pstmt.setInt(2, price);
+
 				if(kind.equals("1")) {
 					pstmt.setString(3, "b0"+kind);
 				} else if(kind.equals("2")) {
@@ -43,6 +44,7 @@ public class InsertBookLab {
 					pstmt.setString(3, "b0"+kind);
 				} else {
 					pstmt.setString(3, null);
+					System.out.println("입력하신 분류는 등록되지 않은 분류번호로 미분류도서로 등록됩니다.");
 				}
 
 				pstmt.executeUpdate();
@@ -53,7 +55,7 @@ public class InsertBookLab {
 				String aws = scan.nextLine();
 				// equalsIgnorCase : 대소문자 구분 없이
 				if (aws.equalsIgnoreCase("y")) {
-					continue;
+					// continue; 생략가능
 				} else if(aws.equalsIgnoreCase("n")) {
 				System.out.printf("%d개의 데이터 입력 완료!", cnt);
 				break;

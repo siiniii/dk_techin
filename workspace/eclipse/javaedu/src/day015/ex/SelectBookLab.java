@@ -37,7 +37,6 @@ public class SelectBookLab {
 									rs.getInt("price"), rs.getString("kind"));
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
@@ -54,7 +53,6 @@ public class SelectBookLab {
 									rs.getInt("price"), rs.getString("kind"));
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
@@ -70,7 +68,6 @@ public class SelectBookLab {
 							System.out.printf("%s\t\t%,d원\n", rs.getString("title"), rs.getInt("price"));
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
@@ -86,7 +83,6 @@ public class SelectBookLab {
 							System.out.printf("%s\t\t%,d원\n", rs.getString("title"), rs.getInt("price"));
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
@@ -103,7 +99,6 @@ public class SelectBookLab {
 							System.out.printf("%s\t\t%,d원\n", rs.getString("title"), rs.getInt("price"));
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
@@ -118,7 +113,6 @@ public class SelectBookLab {
 							System.out.printf("%s\t\t%,d원\n", rs.getString("title"), rs.getInt("price"));
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
@@ -143,13 +137,12 @@ public class SelectBookLab {
 
 						}
 						rs.close();
-						stmt.close();
 					} catch (SQLException se) {
 						System.out.println(se.getMessage());
 					}
 				} else {
 				}
-				
+
 				System.out.print("\n계속 검색하시겠습니까?(y/n)");
 				String aws = scan.nextLine();
 				// equalsIgnorCase : 대소문자 구분 없이
