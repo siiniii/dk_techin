@@ -1,4 +1,4 @@
-package day016;
+package day017;
 
 class ThreadEx02 {
 	public static void main(String args[]) throws Exception {
@@ -16,6 +16,7 @@ class ThreadEx2_1 extends Thread {
 		try {
 			throw new Exception();
 		} catch (Exception e) {
+			// 새롭게 기동된 자식의 콜스텍
 			e.printStackTrace();
 		}
 	}

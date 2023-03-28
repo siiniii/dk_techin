@@ -1,4 +1,4 @@
-package day016;
+package day017;
 
 class ThreadEx04 {
 	public static void main(String args[]) throws InterruptedException {
@@ -11,7 +11,7 @@ class ThreadEx04 {
 		// System.out.println("소요시간1:" +(System.currentTimeMillis()- startTime));
 
 		for (int i = 0; i < 20; i++) {
-			System.out.printf("%s", new String("|"));
+			System.out.printf("%s", new String("|")); // pipe
 			Thread.sleep(1000);
 		}
 

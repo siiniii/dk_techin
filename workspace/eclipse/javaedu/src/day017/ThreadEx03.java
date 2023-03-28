@@ -1,4 +1,4 @@
-package day016;
+package day017;
 
 class ThreadEx03 {
 	public static void main(String args[]) throws Exception {

@@ -1,4 +1,4 @@
-package day016;
+package day017;
 
 class ThreadEx05 {
 	static long startTime = 0;

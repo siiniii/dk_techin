@@ -1,4 +1,4 @@
-package day016;
+package day017;
 
 class ThreadEx01 {
 	public static void main(String args[]) {
@@ -6,7 +6,9 @@ class ThreadEx01 {
 
 		Runnable r = new ThreadEx1_2();
 		Thread t2 = new Thread(r); // 생성자 Thread(Runnable target)
-
+		
+		// mainThread + Thread 2개가 호출되어 총 3개의 Thread가 실행된다.
+		
 		t1.start();
 		t2.start();
 	}
@@ -20,6 +22,7 @@ class ThreadEx1_1 extends Thread {
 	}
 }
 
+// Run메서드에는 throws절이 없기 때문에 try catch를 사용해야한다.
 class ThreadEx1_2 implements Runnable {
 	public void run() {
 		for (int i = 0; i < 5; i++) {
