@@ -1,5 +1,6 @@
 package day017;
 
+// 함수형 인터페이스
 interface Sample {
 	int calc(int n);
 }

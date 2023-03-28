@@ -13,12 +13,14 @@ public class LambdaTest2 {
 	}
 
 	public static void main(String[] args) {
+		// 어노니머스 이너 로컬클래스를 정의해서 전달하는 방식.
 		exec(new Calculation() {
 			public int add(int a, int b) {
 				return a + b;
 			}
 		});
-
+		
+		// 람다식
 		exec((int a, int b) -> {
 			return a + b;
 		});

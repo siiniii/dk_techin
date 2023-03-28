@@ -15,12 +15,11 @@ public class Book {
 		this.price = price;
 	}
 
-	public void getBookInfo() {
-		System.out.printf("[%s]\t[%s]\t[%,d원]\n ", title, author, price);
-	}
+//	public String getBookInfo() {
+//		System.out.printf("[%s]\t[%s]\t[%,d원]\n ", title, author, price);
+//	}
 
-	@Override
-	public String toString() {
+	public String getBookInfo() {
 		return String.format("[%s] [%s] [%,d원] ", title, author, price); 
 	}
 

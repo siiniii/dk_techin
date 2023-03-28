@@ -19,6 +19,7 @@ class PrintThread2 extends Thread {
 		while (true) {
 			System.out.println("실행 중");
 			if (Thread.interrupted()) {
+				// 자원 정리
 				break;
 			}
 		}

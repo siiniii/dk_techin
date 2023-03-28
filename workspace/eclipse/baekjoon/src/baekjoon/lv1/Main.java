@@ -8,10 +8,13 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int a = sc.nextInt();
-		int b = sc.nextInt();
+		int a = Integer.parseInt(sc.nextLine());
+		String b = sc.nextLine();
 		
-		System.out.println((a+b)%c);
+		for(int i = 2; i >= 0; i--) {
+			System.out.println(a * (b.charAt(i) - '0'));
+		}
+		System.out.println(a * Integer.parseInt(b));
 		
 		sc.close();
 		
