@@ -22,9 +22,7 @@
 <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
 <img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white">  
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<br /><br />
-
----
+<br />
 
 # <br /><P style= "font-family:NanumSqyare;"  align= "center">📄 What  I studied everyday</P>
 |||||||
