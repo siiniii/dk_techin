@@ -12,8 +12,10 @@ public class LambdaTest11 {
 		Collections.sort(list);
 		System.out.println("기본은 오름차순 : " + list);
 
+		// Comparator 역시 람다식으로 구현할 수 있다.
 		Collections.sort(list, new Comparator<String>() {
 			public int compare(String s1, String s2) {
+				// 두번째 아규먼트를 호출하면 내림차순이 된다.
 				return s2.compareTo(s1);
 			}
 		});

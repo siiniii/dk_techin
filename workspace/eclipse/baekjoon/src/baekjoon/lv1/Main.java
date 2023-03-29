@@ -5,19 +5,22 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int a = Integer.parseInt(sc.nextLine());
-		String b = sc.nextLine();
-		
-		for(int i = 2; i >= 0; i--) {
-			System.out.println(a * (b.charAt(i) - '0'));
-		}
-		System.out.println(a * Integer.parseInt(b));
-		
-		sc.close();
-		
+	Scanner sc = new Scanner(System.in);
+	
+	int no = sc.nextInt();
+	
+	if(no>=90 && no<=100) {
+		System.out.println("A");
+	}else if (no>=80 && no<=89) {
+		System.out.println("B");
+	}else if (no>=70 && no<=79) {
+		System.out.println("C");
+	}else if (no>=60 && no<=69) {
+		System.out.println("D");
+	}else {
+		System.out.println("F");
+	}
+	sc.close();
 	}
 
 }

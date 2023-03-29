@@ -7,6 +7,8 @@ interface MyFunctionalInterface2 {
 
 public class LambdaTest6 {
 	public static void main(String[] args) {
+		
+		// MyFunctionalInterface2 fi = null;
 		MyFunctionalInterface2 fi = (x) -> {
 			System.out.println(x);
 		};
@@ -17,5 +19,6 @@ public class LambdaTest6 {
 
 		fi = System.out::println;
 		fi.method2(2);
+		
 	}
 }

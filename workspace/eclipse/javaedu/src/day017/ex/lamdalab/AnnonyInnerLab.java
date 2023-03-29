@@ -26,7 +26,7 @@ public class AnnonyInnerLab {
 //				}
 //			}
 //		);
-		
+
 		Collections.sort(al,((o1, o2) -> o1.getPrice() - o2.getPrice()));
 		
 		System.out.println("[소팅 후 ]");
