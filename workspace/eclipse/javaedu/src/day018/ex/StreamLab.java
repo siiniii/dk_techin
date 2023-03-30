@@ -1,12 +1,7 @@
 package day018.ex;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 class Trainee {
 	private final String name;
     private final boolean isMale; // 성별
@@ -66,10 +61,9 @@ public class StreamLab {
 			// 모든 문제들은 위의 배열 객체를 가지고 스트림 객체를 만든 다음에 해결한다.
 			
 			// (1) Trainee 객체들을 화면에 출력한다.
-			Stream<Trainee> ts1 = Arrays.stream(sa);
 			System.out.println("(1) Trainee 객체들을 화면에 출력한다.");
 			System.out.println("-----------------------------------------");
-			ts1.forEach(student -> System.out.println(student));
+			Arrays.stream(sa).forEach(student -> System.out.println(student));
 			System.out.println();
 			
 			// (2) 성적이 높은 순으로 Trainee 객체들을 화면에 출력한다.
@@ -87,8 +81,7 @@ public class StreamLab {
 			// (4) 성적이 200 이상인 수강생들의 인원을 출력한다.
 			System.out.println("(4) 성적이 200 이상인 수강생들의 인원을 출력한다.");
 			System.out.println("-----------------------------------------");
-			int cnt = (int) Arrays.stream(sa).filter(smart -> smart.getScore() >= 200).count();
-			System.out.println(cnt);
+			System.out.println(Arrays.stream(sa).filter(smart -> smart.getScore() >= 200).count());
 			System.out.println();
 			
 			// (5) 남학생의 Trainee 객체들을 화면에 출력한다.
@@ -100,8 +93,7 @@ public class StreamLab {
 			// (6) 남학생의 인원을 출력한다.
 			System.out.println("(6) 남학생의 인원을 출력한다.");
 			System.out.println("-----------------------------------------");
-			long male = Arrays.stream(sa).filter(m -> m.isMale()).count();
-			System.out.println(male);
+			System.out.println(Arrays.stream(sa).filter(m -> m.isMale()).count());
 			System.out.println();
 			
 			// (7) 모든 학생들의 스코어만 출력한다.
@@ -113,7 +105,7 @@ public class StreamLab {
 			// (8) 모든 학생들의 스코어 합을 출력한다.
 			System.out.println("(8) 모든 학생들의 스코어 합을 출력한다.");
 			System.out.println("-----------------------------------------");
-			long sum = Arrays.stream(sa).mapToInt(score -> score.getScore()).sum();
-			System.out.println(sum);
+			System.out.println(Arrays.stream(sa).mapToInt(score -> score.getScore()).sum());
+			System.out.println();
    }
 }

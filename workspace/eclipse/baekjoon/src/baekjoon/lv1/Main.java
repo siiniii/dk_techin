@@ -9,17 +9,12 @@ public class Main {
 	
 	int no = sc.nextInt();
 	
-	if(no>=90 && no<=100) {
-		System.out.println("A");
-	}else if (no>=80 && no<=89) {
-		System.out.println("B");
-	}else if (no>=70 && no<=79) {
-		System.out.println("C");
-	}else if (no>=60 && no<=69) {
-		System.out.println("D");
-	}else {
-		System.out.println("F");
+	if (no % 4 == 0 && no % 100 != 0 || no % 400 == 0) {
+		System.out.println("1");
+	} else {
+		System.out.println("0");
 	}
+	
 	sc.close();
 	}
 
