@@ -7,13 +7,15 @@ public class Main {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	
-	int no = sc.nextInt();
+	int H = sc.nextInt();
+	int M = sc.nextInt();
 	
-	if (no % 4 == 0 && no % 100 != 0 || no % 400 == 0) {
-		System.out.println("1");
-	} else {
-		System.out.println("0");
+	if (H < 24) {
+		H = 0;
+	} else if (M < 60) {
+		M = 0;
 	}
+	System.out.println();
 	
 	sc.close();
 	}
