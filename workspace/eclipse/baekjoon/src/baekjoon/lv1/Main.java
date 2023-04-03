@@ -7,15 +7,20 @@ public class Main {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	
-	int H = sc.nextInt();
-	int M = sc.nextInt();
+	int A = sc.nextInt();
+	int B = sc.nextInt();
+	int C = sc.nextInt();
 	
-	if (H < 24) {
-		H = 0;
-	} else if (M < 60) {
-		M = 0;
+	if((B+C) > 59) {
+		A++;
+		System.out.println(A + " " + ((B+C)-60));
+	} else {
+		System.out.println(A + " " + (B+C));
 	}
-	System.out.println();
+	
+	
+	
+	
 	
 	sc.close();
 	}
