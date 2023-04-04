@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise6</title>
+</head>
+<body>
+<script src="util.js"></script>
+	<script type="text/javascript">
+	function getKorDay(y, m, d) {
+		if(isNaN(y,m,d)) {
+			return;
+		}
+		const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+	    const date = new Date(y, m - 1, d);
+	    return days[date.getDay()];
+	}
+	
+	var y = window.prompt("년을 입력하세요");
+	var m = window.prompt("월을 입력하세요");
+	var d = window.prompt("일을 입력하세요");
+	
+	const result = getKorDay(y, m, d);
+	
+	console.log(y);
+	console.log(m);
+	console.log(d);
+	
+	if (result === undefined) {
+		writeColor("결과 없음", "h1","red");
+	} else {
+	writeColor(y + "년 " + m + "월 " + d + "일은 " + getKorDay(y,m,d) + "입니다.", "h1","blue");
+	}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise8</title>
+</head>
+<body>
+	<script src="util.js"></script>
+	<script type="text/javascript">
+		function printH1(content) {
+			write(content, "h1");
+		}
+		function printH4(content) {
+			write(content, "h4");
+		}
+
+		function apply(arr, fun) {
+			if (!Array.isArray(arr) || typeof fun != 'function') {
+				console.log('아규먼트 오류');
+				return false;
+			}
+			for ( let i in arr) {
+				fun(arr[i]);
+			}
+			return true;
+		}
+
+		var array = [];
+		var input;
+
+		while (true) {
+
+			input = window.prompt("입력값을 넣어주세요");
+			if(input == null) {
+				break;
+			}
+			array.push(input);
+		}
+
+		let randNum = Math.floor(Math.random() * 10) + 1;
+		console.log(randNum);
+
+		var sig;
+
+		if ([ 1, 4, 6 ].includes(randNum)) {
+			sig = apply(array, printH1);
+		} else if ([ 3, 5, 7 ].includes(randNum)) {
+			sig = apply(array, printH4);
+		} else if ([ 8, 9 ].includes(randNum)) {
+			sig = apply('ㅋㅋ', printH1);
+		} else {
+			sig = apply(array);
+		}
+
+		if (sig) {
+			window.alert('처리 성공');
+		} else {
+			window.alert('처리 실패');
+		}
+	</script>
+</body>
+</html>

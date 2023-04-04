@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise5</title>
+</head>
+<body>
+<script src="util.js"></script>
+	<script type="text/javascript">
+		writeColor("자바스크립트 실습(5)", "h1", "blue");
+		
+		function getMaxValue(arr) {
+			return Math.max(...arr);
+		}
+		function getMinValue() {
+			return Math.min(...arr);
+		}
+		function getSum() {
+			let sum = 0;
+		    arr.forEach(function (no) {
+		        sum += no;
+		    });
+		    return sum;
+		}
+		function getCountOddNum() {
+			let cnt = 0;
+		    arr.forEach(function (no) {
+		        if (no % 2 !== 0) cnt++;
+		    });
+		    return cnt;
+		}
+		function getCountEvenNum() {
+			let cnt = 0;
+		    arr.forEach(function (no) {
+		        if (no % 2 == 0) cnt++;
+		    });
+		    return cnt;
+		}
+		
+		let arr = [10, 5, 7, 21, 4, 8, 18];
+		
+		writeColor("모든 원소의 합 : " + getSum(arr), "h2", "red");
+		
+		document.writeln("<ul>");
+		write("최대값 : " + getMaxValue(arr), "li");
+		write("최소값 : " + getMinValue(arr), "li");
+		write("짝수의 갯수 : " + getCountEvenNum(arr), "li");
+		write("짝수의 갯수 : " + getCountOddNum(arr), "li");
+		document.writeln("<ul>");
+	</script>
+</body>
+</html>

@@ -9,10 +9,10 @@
 <hr>
 <script src="util.js"></script>
 <script>
-function sum() {
+function sum(...p) {
 	let result = 0;
 	for(var i=0; i < arguments.length; i++) 
-		result += arguments[i];
+		result += p[i];
 	return result;
 }
 writeColor(sum(), 'h3', 'red');
