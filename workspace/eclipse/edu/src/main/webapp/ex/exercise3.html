@@ -17,15 +17,15 @@
 	var sum = 0;
 
 	for(let i = 1; i <= no; i++){
-		sum +=i;
+		sum += i;
 	}
-	
-	write("1부터" + no + "까지의 합은" +  sum + "입니다.", "h2");
 	
 	if(no == "" || no == null) {
 		write("비어있는 입력","h3");
 	} else if (isNaN(no)) {
 		write("입력된 데이터가 숫자가 아닙니다.", "h3");
+	} else { 
+		write("1부터" + no + "까지의 합은" +  sum + "입니다.", "h2");
 	}
 
 

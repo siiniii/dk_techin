@@ -16,13 +16,13 @@
 		    if (typeof p[i] !== 'number') {
 		      return "숫자만 전달하세요";
 		    }
-		    sum += p[i];
+		    sum += parseInt(p[i]);
 		  }
 		  return sum;
 		}
 		
 		document.write('<h3>' + calc() + '</h3>');
-		document.write('<h3>' + calc(10, 20, Number('30')) + '</h3>');
+		document.write('<h3>' + calc(10, 20, '30') + '</h3>');
 		document.write('<h3>' + calc(10, '가나다', 20) + '</h3>');
 		document.write('<h3>' + calc(1,2,3,4,5) + '</h3>');
 	

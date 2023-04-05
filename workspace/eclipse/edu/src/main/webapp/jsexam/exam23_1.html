@@ -25,12 +25,13 @@ obj.study = function() {
 	write(this.name+"는 "+this.project+"를 공부해요.", "h3");
 }
 obj.study();
-for(var key in obj) {
+for(let key in obj) {
 	write(key + ":" + obj[key], "h3"); // 객체.속성명, 객체['속성명'], 객체.메서드명()
 }
+
 delete obj.study;
 hr();
-for(var key in obj) {
+for(let key in obj) {
 	write(key + ":" + obj[key], "h3");
 }
 </script>

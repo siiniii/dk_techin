@@ -21,7 +21,17 @@
 			}
 			for ( let i in arr) {
 				fun(arr[i]);
+			} 
+			
+			/* if(arr == undefined || !Array.isArray(arr) || fun == undefined || typeof fun != 'function') {
+				console.log('아규먼트 오류');
+				return false;
 			}
+			
+			for(let i = 0; i < arr.length; i++) {
+				fun(arr[i]);
+			} */
+			
 			return true;
 		}
 
@@ -52,11 +62,12 @@
 			sig = apply(array);
 		}
 
-		if (sig) {
+		if(sig) {
 			window.alert('처리 성공');
 		} else {
 			window.alert('처리 실패');
 		}
+		
 	</script>
 </body>
 </html>

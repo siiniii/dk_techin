@@ -9,6 +9,7 @@
 <hr>
 <script src="util.js"></script>
 <script>
+// 생성자 함수 : 객체의 멤버를 초기화 하는 함수(클래스 + 생성자메서드)
 function Student(name, korean, math, english, science) {
     this.이름 = name;
     this.국어 = korean;
@@ -16,6 +17,7 @@ function Student(name, korean, math, english, science) {
     this.영어 = english;
     this.과학 = science;    
 }
+// JavaScript에서의 new -> 비어있는 객체 생성
 var st1 = new Student('둘리', 96, 98, 92, 98);
 var st2 = new Student('또치', 92, 98, 96, 98);
 var st3 = new Student('도우너', 76, 96, 94, 90);

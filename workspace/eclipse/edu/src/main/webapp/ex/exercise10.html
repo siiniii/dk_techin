@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise10</title>
+</head>
+<body>
+	<script src="util.js"></script>
+	<script type="text/javascript">
+	function DayInfo(name, y, m, d){
+		this.name = name;
+		this.y = y;
+		this.m = m;
+		this.d = d;
+	}
+	
+	DayInfo.prototype.getTotalDates = function() {
+		const date = new Date(this.y, this.m - 1, this.d);
+		let today = new Date();
+		
+		let day = date.getTime();
+		let dDay = today - day;
+		let result = Math.floor(dDay / (1000 * 60 * 60 * 24));
+		return this.name + "님은 태어난지 " + result +"일 되었어요.";
+	}
+	
+	DayInfo.prototype.getKorDay = function() {
+		const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+	    const date = new Date(this.y, this.m - 1, this.d);
+	    const day = days[date.getDay()];
+	    return this.name + "님은 "+ day + "에 태어났어요.";
+	}
+	
+	const p = [
+		new DayInfo("짱구", "1994", "5", "5"),
+		new DayInfo("짱아", "1996", "9", "27"),
+		new DayInfo("봉미선", "1967", "10", "10")
+	];
+	
+	for(let i = 0; i < 3; i++){
+		writeColor(p[i].getTotalDates(),"h3","slategray");
+		writeColor(p[i].getKorDay(),"h3","darkslategray");
+	}
+	
+	</script>
+</body>
+</html>

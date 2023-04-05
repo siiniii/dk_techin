@@ -29,6 +29,9 @@
 	Student.prototype.toString = function() {
 			return this.name+"학생의 총점은 "+this.getSum()+"입니다.";
 	};
+	
+	// static 멤버 넣는 법
+	// 생성자함수이름.메서드이름 -> static 멤버
 	Student.getSchoolName = function() {
 		return "코사 학교";
 	}

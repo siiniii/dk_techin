@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise9</title>
+</head>
+<body>
+	<script src="util.js"></script>
+	<script type="text/javascript">
+	function printObject(p) {
+		if(typeof p !== 'object') {
+			return;
+		}
+		writeColor(p.msg,p.tag,p.color);
+	}
+	
+	const o = [
+	{tag: 'h1', color: 'red', msg: '빨강'},
+	{tag: 'h2', color: 'orange', msg: '주황'},
+	{tag: 'h3', color: 'yellow', msg: '노랑'},
+	{tag: 'h4', color: 'green', msg: '초록'},
+	{tag: 'h5', color: 'blue', msg: '파랑'}
+	];
+	
+	for(let i = 0; i < 5;i++) {
+		printObject(o[i]);	
+	}
+	
+	
+	</script>
+</body>
+</html>
