@@ -24,8 +24,8 @@ function updateColor() {
     const randomValue = Math.random();
     const colorCode = '#'+Math.round(Math.random() * 0xffffff).toString(16);
     console.log(colorCode);
-    dom.style.color = colorCode; // color
-    //dom.style.backgroundColor = colorCode; // background-color
+    // dom.style.color = colorCode; // color
+    dom.style.backgroundColor = colorCode; // background-color
 }
 function updateImage() {    
 	const dom = document.getElementsByTagName("img")[0];
@@ -35,5 +35,6 @@ function updateImage() {
     dom.src = "../../images/"+imageName+".jpg";
 }
 </script>
+
 </body>
 </html>

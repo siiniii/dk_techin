@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단 출력</title>
+<style type="text/css">
+* {
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	padding: 3%;
+}
+
+#btn {
+	text-align: center;
+	margin: 5%;
+}
+
+button {
+	text-align: center;
+	font-size: 1em;
+	border: 3px solid #7bc6cc;
+	border-radius: 10px;
+}
+
+div {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1 onclick="go('https://ko.wikipedia.org/wiki/구구단');">구구단</h1>
+	<div id="btn">
+		<button>1단</button>
+		<button>2단</button>
+		<button>3단</button>
+		<button>4단</button>
+		<button>5단</button>
+		<button>6단</button>
+		<button>7단</button>
+		<button>8단</button>
+		<button>9단</button>
+	</div>
+	<div></div>
+</body>
+
+<script type="text/javascript">
+
+	function loadGugudan() {
+		var no = this.textContent[0];
+		if (dom3.innerHTML) {
+			dom3.innerHTML = "";
+		}
+		for (let dan = no; dan <= no; dan++) {
+			for (let num = 1; num <= 9; num++) {
+				dom3.innerHTML += "<h3>" + dan + "x" + num + "=" + dan * num + "<\h3>" + "<br>";
+			}
+		}
+
+	}
+
+	function go(url) {
+		location.href = url;
+	}
+
+	const dom1 = document.getElementsByTagName("div")[0];
+	const dom2 = document.getElementsByTagName("button");
+	const dom3 = document.getElementsByTagName("div")[1];
+
+	for (let i = 0; i < 9; i++) {
+		dom2[i].addEventListener("click", loadGugudan);
+	}
+	
+</script>
+
+</html>

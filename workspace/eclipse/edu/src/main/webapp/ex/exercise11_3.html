@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 모델-표준</title>
+</head>
+<body>
+	<h1>이벤트 모델-표준</h1>
+	<hr>
+	<button>빨강색</button>
+	<button>파랑색</button>
+	<button>노랑색</button>
+	<hr>
+	<h2></h2>	
+</body>
+
+<script type="text/javascript">
+window.onload = function() {
+	const target = document.getElementsByTagName("h2")[0];
+	    const today = new Date();
+	    const m = today.getMonth()+1;
+	    const d = today.getDate();
+	    target.textContent = "오늘은 " + m + "월 " + d + "일입니다" ;
+	
+}
+
+function changeRed() {
+	const dom = document.getElementsByTagName("h2")[0];
+	dom.style.color = "red";
+}
+
+function changeBlue() {
+	const dom = document.getElementsByTagName("h2")[0];
+	dom.style.color = "blue";
+}
+
+function changeYellow() {
+	const dom = document.getElementsByTagName("h2")[0];
+	dom.style.color = "yellow";
+}
+
+const doms = document.getElementsByTagName("button");
+doms[0].addEventListener("click", changeRed);
+doms[1].addEventListener("click", changeBlue);
+doms[2].addEventListener("click", changeYellow);
+
+
+</script>
+</html>
+
