@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 API 실습</title>
+<style type="text/css">
+h1 {
+	text-align: center;
+	margin: 5%;
+}
+
+#btn {
+	text-align: center;
+}
+
+#canvasbox {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function drawImg() {
+		var elem = document.getElementById('canvas');
+		ctx = elem.getContext('2d');
+		/* 얼굴 */
+		ctx.beginPath();
+		ctx.fillStyle = '#AFD439';
+		ctx.arc(350, 350, 240, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+		/* 눈 */
+		ctx.beginPath();
+		ctx.fillStyle = '#AFD439';
+		ctx.arc(270, 100, 60, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+		ctx.beginPath();
+		ctx.fillStyle = '#AFD439';
+		ctx.arc(380, 100, 60, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+		/* 동공 */
+		ctx.beginPath();
+		ctx.fillStyle = '#0D0D0D';
+		ctx.arc(270, 100, 25, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+		ctx.beginPath();
+		ctx.fillStyle = '#0D0D0D';
+		ctx.arc(380, 100, 25, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+		/* 입 */
+		ctx.beginPath();
+		ctx.fillStyle = 'black';
+		ctx.moveTo(250, 200);
+		ctx.lineWidth = 20;
+		ctx.quadraticCurveTo(210, 350, 430, 200);
+		ctx.stroke();
+
+		/* 볼 */
+		ctx.beginPath();
+		ctx.fillStyle = '#ED731E';
+		ctx.arc(190, 230, 30, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+		ctx.beginPath();
+		ctx.fillStyle = '#ED731E';
+		ctx.arc(480, 230, 30, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.restore();
+
+	}
+
+	window.addEventListener("load", drawImg, false);
+</script>
+</head>
+<body>
+	<h1>이승인의 HTML5 API 실습</h1>
+	<div id="btn">
+		<button>저장하기</button>
+		<button>읽어오기</button>
+		<button>삭제하기</button>
+	</div>
+	<section id="canvasbox">
+		<canvas id="canvas" width="700" height="700">
+      Your browser doesn't support the canvas element
+    </canvas>
+	</section>
+</body>
+<script type="text/javascript">
+	var dom = document.getElementsByTagName("div")[0];
+
+	function clickBtn(e) {
+
+		if (e.target.nodeName === 'BUTTON') {
+
+			if (e.target.textContent === '저장하기') {
+				alert(canvas.toDataURL());
+				window.localStorage.setItem("frog", canvas.toDataURL());
+			} else if (e.target.textContent === '읽어오기') {
+				const img = new Image();
+				img.src = window.localStorage.frog;
+				img.onload = function() {
+					ctx.drawImage(img, 0, 0);
+				}
+			} else {
+				ctx.clearRect(0, 0, 700, 700);
+			}
+		}
+
+	}
+
+	dom.addEventListener("click", clickBtn);
+</script>
+</html>
