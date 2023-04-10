@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise15</title>
+<style type="text/css">
+div {
+	text-align: center;
+}
+</style>
+
+
+</head>
+<body>
+<div>
+	<h1>오늘의 날씨 정보 - </h1>
+	<hr>
+	<h2>발표 일시 : </h2>
+	<h2>온도 : </h2>
+	<img alt="" src="">
+</div>
+</body>
+<script type="text/javascript">
+	window.onload = function() {
+		const xhr = new XMLHttpRequest();
+		xhr.onload = function() {
+			const str = xhr.responseText;
+			const obj = JSON.parse(str);
+			
+			const wtext = document.getElementsByTagName("h1")[0];
+			const time = document.getElementsByTagName("h2")[0];
+			const temp = document.getElementsByTagName("h2")[1];
+			const img = document.getElementsByTagName("img")[0];
+	
+			wtext.innerHTML += obj.wtext;
+			time.innerHTML += obj.time;
+			temp.innerHTML += obj.temp + "°C";
+
+			img.width = 300;
+			img.height = 300;
+			img.src = "../" + obj.img;
+
+		};
+		xhr.open('GET', '../jsexam/ajaxexam/content/weather.jsp', true);
+		xhr.send();
+	};
+</script>
+</html>

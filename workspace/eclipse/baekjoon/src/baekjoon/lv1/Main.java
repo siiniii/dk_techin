@@ -12,13 +12,11 @@ public class Main {
 	int C = sc.nextInt();
 	
 	if((B+C) > 59) {
-		A++;
+		++A;
 		System.out.println(A + " " + ((B+C)-60));
 	} else {
 		System.out.println(A + " " + (B+C));
 	}
-	
-	
 	
 	
 	
