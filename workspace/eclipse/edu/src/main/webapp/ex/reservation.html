@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>reservation from</title>
+<style type="text/css">
+h1 {
+	text-align: center;
+	color: #fffcdc;
+	text-shadow: 2px 2px 5px #1c92d2, 4px 4px 5px #f2fcfe;
+	text-decoration: none;
+}
+
+form {
+	width: 50%;
+	height: 300px;
+	margin-left: 25%;
+	background-image: linear-gradient(to right, #74ebd5, #ACB6E5);
+	font-size: 1em;
+	border-radius: 30px;
+	margin-left: 25%;
+}
+
+div {
+	padding: 10px;
+}
+button {
+	margin-left: 10px;
+	background-color: #f2fcfe;
+	box-shadow: 2px 2px 5px #1c92d2, 4px 4px 5px #f2fcfe;
+}
+</style>
+
+</head>
+<body>
+	<h1>펜션 예약 서비스</h1>
+	<hr>
+
+	<form method="post" action="/edu/reservation">
+		<div>
+			<label for="name">예약자명 : </label> <input type="text" id="name"
+				name="name" placeholder="이름을 입력하세요"><br>
+		</div>
+		<div>
+			<label for="pw">예약암호 : </label> <input type="text" id="pw" name="pw"
+				placeholder="암호를 입력하세요"><br>
+		</div>
+		<div>
+			<label for="room">룸선택 : </label> <input type="radio" id="room"
+				name="room" value="봄" checked>봄 <input type="radio"
+				id="room" name="room" value="여름">여름 <input type="radio"
+				id="room" name="room" value="가을">가을 <input type="radio"
+				id="room" name="room" value="겨울">겨울<br>
+		</div>
+		<div>
+			<label for="aRequest">추가요청사항 : </label> <input type="checkbox"
+				id="aRequest" name="aRequest" value="바베큐">바베큐 <input
+				type="checkbox" id="aRequest" name="aRequest" value="수영장">수영장
+			<input type="checkbox" id="aRequest" name="aRequest" value="낚시">낚시
+			<input type="checkbox" id="aRequest" name="aRequest" value="조식">조식<br>
+		</div>
+		<div>
+			<label for="date">예약날짜 : </label> <input type="date" name="date"
+				required><br>
+			<hr>
+		</div>
+		<button id="submit" name="submit" type="submit">보내기</button>
+		<button id="reset" name="reset" type="reset">다시작성하기</button>
+	</form>
+
+</body>
+</html>

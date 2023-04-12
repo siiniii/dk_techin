@@ -17,6 +17,7 @@ public class CountServlet extends HttpServlet {
 		if(session.getAttribute("cnt") == null) {
 			session.setAttribute("cnt", new int[1]);
 		}
+		// 자식객체임으로 형변환 필수
 		int[] count = (int[])session.getAttribute("cnt");
 		count[0]++;
 		out.print("<h3>당신은 "+ count[0] + 

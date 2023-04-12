@@ -15,7 +15,7 @@ public class SessionTestServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		String command = request.getParameter("comm");
-		HttpSession session = request.getSession();		
+		HttpSession session = request.getSession();	 // 생성(x) 준비(o)	
 		String msg="";
 		long time = session.getCreationTime();
 		String id = session.getId();
@@ -25,14 +25,12 @@ public class SessionTestServlet extends HttpServlet {
 			} else {
 				msg = "세션 객체 추출 : "; 
 			}
-			msg += "<br>id : " + id + " <br>time : " +
-			                new Date(time);
+			msg += "<br>id : " + id + " <br>time : " + new Date(time);
 		} else if (command.equals("delete")) {
 			session.invalidate();
 			msg = id + "을 id로 갖는 세션 객체 삭제!!";
 		} else {
-			msg = "요청시 Query 문자열로 comm=view 또는 comm=delete 를 "
-					+ "전달해주세요!!";
+			msg = "요청시 Query 문자열로 comm=view 또는 comm=delete 를 전달해주세요!!";
 		}
 		out.print("<h2>"+ msg+"</h2>");
 		out.close();
