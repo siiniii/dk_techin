@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>product</title>
+<style type="text/css">
+h1 {
+	text-align: center;
+}
+
+div {
+	margin: auto;
+	text-align: center;
+	margin: 50px;
+}
+#selected {
+	width: 50%;
+	border: 10px solid #22c1c3;
+	border-radius: 10%;
+	background-color: #fdbb2d;
+	padding: 20px;
+	margin-left: 25%;
+}
+img {
+	box-shadow: 2px 2px gray;
+	border:  1px solid black;
+	margin: 1%;
+}
+</style>
+</head>
+<body>
+	<h1>원하는 상품을 클릭해 주세요!! 마구마구^^</h1>
+	<hr>
+	<div>
+		<img id="p001" alt="" src="../images/1.jpg" width="150"> 
+		<img id="p002" alt="" src="../images/2.jpg" width="150"> 
+		<img id="p003" alt="" src="../images/3.jpg" width="150"> 
+		<img id="p004" alt="" src="../images/4.jpg" width="150"> 
+		<img id="p005" alt="" src="../images/5.jpg" width="150"> 
+		<br> 
+		<img id="p006" alt="" src="../images/6.jpg" width="150"> 
+		<img id="p007" alt="" src="../images/7.jpg" width="150"> 
+		<img id="p008" alt="" src="../images/8.jpg" width="150"> 
+		<img id="p009" alt="" src="../images/9.jpg" width="150"> 
+		<img id="p010" alt="" src="../images/10.jpg" width="150">
+	</div>
+	<div id="selected">
+		<p>선택한 상품 리스트</p>
+		<hr>
+		<ul id="list">
+		</ul>
+		<button>상품비우기</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var dom = document.getElementsByTagName("img");
+	const target = document.getElementById("list");
+	
+	for (let i = 0; i < 10; i++){
+		dom[i].addEventListener("click", function () {
+			var productId = this.getAttribute("id");
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/edu/basket?productId=" + productId, true);
+			xhr.send();
+			
+			xhr.onload = function() {
+				
+				if (xhr.status == 200) {
+					const data = JSON.parse(xhr.responseText);
+					target.innerHTML = "";
+					for(let i in data) {
+						if(data[i] != 0) {
+						target.innerHTML += "<li>" + i + " " + data[i] + "개</li>";
+						}
+					}
+					
+				}
+			}
+			
+		});
+	};
+	
+	var clear = document.getElementsByTagName("button")[0];
+	clear.addEventListener("click", function (e) {
+		e.preventDefault();
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/edu/basket", true);
+		xhr.send();
+		target.innerHTML = "";
+		
+		xhr.onload = function () {
+			const dData = JSON.parse(xhr.responseText);
+			target.innerHTML = "<p>" + Object.values(dData)[0] + "</p>";
+		}
+		
+		
+		
+	});
+	
+</script>
+</html>
