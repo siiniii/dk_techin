@@ -12,7 +12,7 @@
 name 변수의 값 : ${name}<br>
 <% String name="듀크"; %>
 name 변수의 값(표현식 태그) : <%= name %><br>
-name 변수의 값(EL) : ${name}<br>
+name 변수의 값(EL) : ${name}<br> <%-- ${name} : 변수처럼 보이지만 이름이다 --%>
 <% pageContext.setAttribute("name", "자바");  %>
 name 변수의 값 : ${name}<br>
 pageScope.name 변수의 값 : ${pageScope.name}<br>
