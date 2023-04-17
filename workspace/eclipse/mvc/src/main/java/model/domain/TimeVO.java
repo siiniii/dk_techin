@@ -5,7 +5,6 @@ public class TimeVO {
 	private int minute;
 
 	public TimeVO() {
-		super();
 		this.hour = hour;
 		this.minute = minute;
 	}

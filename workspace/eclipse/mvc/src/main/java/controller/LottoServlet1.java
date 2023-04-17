@@ -41,4 +41,3 @@ public class LottoServlet1 extends HttpServlet {
 	
 }
 
-
