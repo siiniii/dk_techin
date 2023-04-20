@@ -15,7 +15,7 @@ public class UserServiceApp {
 		System.out.println(u1);
 		System.out.println("----------------------------------------------------");
 		
-		UserService u2=factory.getBean("userService", UserService.class);
+		UserService u2=factory.getBean("userService", UserService.class); // Class 타입 객체
 		UserVo vo2 = (UserVo)factory.getBean("obj2");
 		u2.addUser(vo2);
 		System.out.println(u2);		

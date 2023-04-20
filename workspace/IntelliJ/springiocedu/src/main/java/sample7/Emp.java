@@ -1,9 +1,10 @@
 package sample7;
 
 public class Emp {
+
 	private String name;
 	private int salary;
-	
+
 	public Emp() {
 		super();
 	}

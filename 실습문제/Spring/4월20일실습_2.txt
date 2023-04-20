@@ -1,0 +1,51 @@
+[ 스프링 IoC 실습 - bean 설정 파일을 통한 빈 생성 ]
+
+메일제목 : 스프링실습1-XXX
+압축소스명 : 소스39.zip(자바소스 3개, 빈 설정 파일 2개)
+
+springioclab이라는 프로젝트에서 exam2 이라는 패키지를 만들고 구현한다.
+다음에 작성된 내용을 반영하여 클래스를 구현하고 빈 설정 파일을 작성하여 
+Spring DI 기반의 애플리케이션을 개발한다.
+(요구 사항외에는 추가, 변경을 하지 않는다.)
+springiocedu의 src/main/java 폴더에 exam2 라는 패키지를 만들고 구현한다.
+
+1. 다음에 제시된 사양에 맞춰서 Homework 클래스를 생성한다.
+
+   - String homeworkName 멤버 변수(private)를 선언한다.	
+   - String homeworkName 을 아규먼트로 받는 생성자를 만든다.
+      전달 받은 것으로 멤버 변수를 초기화 한다.
+   - homeworkName 의 getter 와 setter를 만든다.
+
+2. 다음에 제시된 사양에 맞춰서 Student 클래스를 생성한다.
+
+   - String name 멤버 변수(private)를 선언한다.	
+   - Homework myHomework 멤버 변수(private)를 선언한다.	
+   - 아규먼트를 받지 않는 생성자를 만든다.
+   - name과 myHomework 의 getter 와 setter를 만든다.
+
+3. 빈 설정 파일(스프링 디스크립터 파일)에 Homework 클래스의 빈 3개를 생성하는 <bean>태그를 작성한다.
+    - Constructor Injection
+            이름    설정값
+    빈1 : h1         국어
+    빈2 : h2         영어
+    빈3 : h3         수학	      
+
+    빈 설정 파일에 Student 클래스의 빈 3개를 생성하는 <bean>태그를 작성한다.
+    - Setter Injection
+           이름   설정값
+    빈1 : st1 - 둘리, 국어에 대한 Homework 객체
+    빈2 : st2 - 또치, 수학에 대한 Homework 객체
+    빈3 : st3 - 도우너, 영어에 대한 Homework 객체
+
+    빈 설정 파일은 제공된 파일을 resources 폴더에 저장하고 각 요구사항에 알맞게 <bean> 태그를 작성하고 테스트한다.
+    bean1.xml - 기본형
+    bean2.xml - 단축형
+
+4. 메인 클래스(StudyApp)
+
+    스프링 IoC 컨테이너에서 st1, st2, st3 이름의 빈 객체들을 찾아와서(DL)하여 다음과
+    같이 메시지를 출력한다.    
+    
+    둘리는 국어를 학습합니다.
+    또치는 수학을 학습합니다.
+    도우너는 영어를 학습합니다.

@@ -1,0 +1,32 @@
+[ 스프링 IoC 실습 - bean 설정 파일-DL(Dependency Lookup) ]
+
+메일제목 : 스프링실습1-XXX
+압축소스명 : 소스38.zip(Java소스 6 개와 빈 설정 파일(exam1.xml))
+
+springiocedu의 src/main/java 폴더에 exam1 이라는 패키지를 만들고 구현한다.
+
+1. 다음에 제시된 인터페이스를 객체로 다루는 스프링 IoC 프로그램을 만들어 볼 것이다.
+   우선은 다음 코드로 인터페이스를 생성한다.
+	
+	public interface Greeting {
+	   public void greet();
+	}
+
+2. Greeting 을 구현하는 자식 클래스를 4개 생성한다.               
+	MorningGreetingImpl     --> "상쾌한 아침입니다." 를 출력 (아침 인사)
+	AfternoonGreetingImpl  --> "즐거운 오후되세요." 를 출력 (점심 인사)
+	EveningGreetingImpl      --> "편안한 저녁되세요." 를 출력 (저녁 인사)
+	NightGreetingImpl      --> "안녕히 주무세요." 를 출력 (밤 인사)
+
+3. resources 폴더에서 sample1.xml 을 복사하여 exam1.xml 이라는 빈 설정 파일을 만든다.
+
+4. 빈 설정 파일에 위의 구현클래스들을 빈으로 등록하는 4개의 <bean> 태그를 작성한다. 
+
+5. LocalDateTime(또는 LocalTime)도 빈으로 등록하기 위해 <bean> 태그를 작성한다.
+
+6. 메인 클래스(GreetingTest)
+    LocalDateTime(또는 LocalTime)의 객체를 찾아와서 
+    아침 6시 ~ 낮 12시 이전이면 아침 인사를 출력하는 빈을 찾아와서 "상쾌한 아침입니다." 를 출력
+    낮 12시 ~ 오후 5시 이전이면 점심 인사를 출력하는 빈을 찾아와서 "즐거운 오후되세요." 를 출력
+    오후 5시 ~ 오후 10시 이전이면 저녁 인사를 출력하는 빈을 찾아와서 "편안한 저녁되세요." 를 출력
+    그 외의 시간이면 : 밤 인사를 출력하는 빈을 찾아와서 "안녕히 주무세요." 를 출력

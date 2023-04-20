@@ -11,7 +11,7 @@
       p:outputter-ref="outputRef" />
       
 <bean id="outputRef" class="sample6.FileOutput"  
-      p:filePath="c:/Temp/data.txt"/>
+      p:filePath="/Users/sini/Back/Temp/data.txt"/>
 
 <!-- <bean id="messageBean" class="sample6.MessageBeanImpl">
 	<constructor-arg  value="Dooly"/>	
