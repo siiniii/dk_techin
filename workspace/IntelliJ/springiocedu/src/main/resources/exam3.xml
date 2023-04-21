@@ -2,17 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<context:component-scan base-package="sampleanno8"/>
-
-<bean id="m"  class="java.lang.String">
-	<constructor-arg value="스프링 FW"/>
-</bean>
-
-<bean id="message"  class="java.lang.String">
-	<constructor-arg value="마이바티스 FW"/>
-</bean> 
+<context:component-scan base-package="exam3"/>
+	<bean id="localTime" class="java.time.LocalTime" factory-method="now"/>
 
 </beans>

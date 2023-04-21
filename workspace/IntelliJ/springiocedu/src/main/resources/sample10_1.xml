@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- 테스트1 
+<!-- 테스트1 -->
 <bean id="myFood" class="sample10.MyFoodMgr">
 	<property name="favoriteFood" ref="favoriteFood"/>
 	<property name="unFavoriteFood" ref="unFavoriteFood"/>
-</bean> -->
+</bean>
 
 <bean id="favoriteFood" class="sample10.Food" >
 	<property name="foodName" value="Bread"/>

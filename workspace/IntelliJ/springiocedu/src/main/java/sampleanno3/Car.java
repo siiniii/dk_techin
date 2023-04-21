@@ -19,7 +19,7 @@ public class Car {
 
 	public void drive() {
 		if (tire != null)
-			System.out.println("Nice made of "+tire.getBrand()+"s car.");
+			System.out.println("Nice made of "+tire.getBrand()+"'s car.");
 		else
 			System.out.println("tire --> "+tire);
 	}
