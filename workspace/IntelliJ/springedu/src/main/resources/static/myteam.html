@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>myTeam</title>
+</head>
+<body>
+<h1>우리팀 소개</h1>
+<hr>
+<button onclick="teamName()">우리 팀명</button>
+<button onclick="teamInfo()">우리 팀원</button>
+<div id="result">
+</div>
+</body>
+<script>
+    function teamName(){
+        let request = new XMLHttpRequest();
+        request.onload = function(){
+            if (request.status == 200) {
+                var result = document.getElementById("result");
+                let jsonDOM = JSON.parse(request.responseText);
+                result.innerHTML += "<h2>우리 팀의 팀명은 "+jsonDOM.teamName+"입니다.</h2>";
+            }
+        };
+        request.open('GET', '/myteam', true);
+        request.send();
+    }
+    function teamInfo(){
+        let request = new XMLHttpRequest();
+        request.onload = function(){
+            if (request.status == 200) {
+                var result = document.getElementById("result");
+                let jsonDOM = JSON.parse(request.responseText);
+                result.innerHTML += "<h2>"+jsonDOM.teamName+"팀의 팀원들을 소개합니다.</h2>";
+                result.innerHTML += "<ul>";
+                for(let i =0; i <5; i++) {
+                    result.innerHTML += "<li>" + jsonDOM.teamMember[i].name + ": 별명은 " + jsonDOM.teamMember[i].nicName + "이고 좋아하는 음식은 " + jsonDOM.teamMember[i].food + "입니다.</li>";
+                }
+                result.innerHTML += "</ul>";
+            }
+        };
+        request.open('GET', '/myteam', true);
+        request.send();
+
+    }
+
+</script>
+</html>

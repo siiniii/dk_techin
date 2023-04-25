@@ -9,22 +9,22 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CalcController {
     @PostMapping(value = "/calcController")
-    public ModelAndView calcResult( @RequestParam(value = "firstNum", defaultValue = "1") int num1, @RequestParam(value = "secondNum", defaultValue = "1") int num2, @RequestParam(value = "operator", defaultValue = "") String operator) {
+    public ModelAndView calcResult( int firstNum, int secondNum, String operator) {
         ModelAndView mav = new ModelAndView();
         int result = 0;
-            if (num2 == 0 && operator.equals("divide")) {
+            if (secondNum == 0 && operator.equals("divide")) {
                 mav.addObject("errorMSG", "나눗셈 연산시 두 번째 숫자는 0일 수 없습니다!!");
                 mav.setViewName("calcError");
             }
             else {
                 if (operator.equals("divide")) {
-                    result = num1 / num2;
+                    result = firstNum / secondNum;
                 } else if (operator.equals("plus")) {
-                    result = num1 + num2;
+                    result = firstNum + secondNum;
                 } else if (operator.equals("minus")) {
-                    result = num1 - num2;
+                    result = firstNum - secondNum;
                 } else {
-                    result = num1 * num2;
+                    result = firstNum * secondNum;
                 }
                 mav.setViewName("calcResult");
                 mav.addObject("result", result);
