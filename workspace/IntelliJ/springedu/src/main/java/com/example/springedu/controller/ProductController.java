@@ -5,17 +5,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.example.springedu.domain.ProductVO;
+import com.example.springedu.domain.ProductDTO;
 
 @Controller
 @SessionAttributes("p")
 public class ProductController {
 	@ModelAttribute("p")
-	public ProductVO create() {
-		return new ProductVO();
+	public ProductDTO create() {
+		return new ProductDTO();
 	}
 	@GetMapping("/cart")
-	public String productCart(@ModelAttribute("p") ProductVO pvo) {		
+	public String productCart(@ModelAttribute("p") ProductDTO pdto) {
 		return  "productView";
 	}
 	@GetMapping("/buy")
@@ -23,8 +23,6 @@ public class ProductController {
 		session.setComplete();
 		return  "productView";
 	}
+
 }
-
-
-
 

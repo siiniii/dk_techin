@@ -1,6 +1,4 @@
 package com.example.springedu.controller;
-
-import com.example.springedu.domain.MyModel;
 import com.example.springedu.domain.TeamDTO;
 import com.example.springedu.domain.TeamMemberVO;
 import org.springframework.stereotype.Controller;

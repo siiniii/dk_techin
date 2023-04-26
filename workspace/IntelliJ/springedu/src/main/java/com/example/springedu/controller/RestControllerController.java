@@ -23,23 +23,7 @@ public class RestControllerController {
 		my.setId(id);
 		return my;
 	}	
-	@RequestMapping(value = "/rest/xml/{id}", 	produces = "text/xml; charset=utf-8")
-		public MyModel getByIdInXML(@PathVariable String id) {
-		MyModel my = new MyModel();
-		my.setFlowerName("장미");
-		my.setNum(5);
-		my.setId(id);
-		return my;
-	}
-	@RequestMapping(value = "/rest/html/{id}")
-	public String getByIdInHTML(@PathVariable String id, Model model) {
-		MyModel my = new MyModel();
-		my.setFlowerName("장미");
-		my.setNum(5);
-		my.setId(id);
-		model.addAttribute("my", my);
-		return "myhtml";
-	}
+
 }
 
 

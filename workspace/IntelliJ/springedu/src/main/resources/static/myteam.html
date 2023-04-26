@@ -19,7 +19,7 @@
             if (request.status == 200) {
                 var result = document.getElementById("result");
                 let jsonDOM = JSON.parse(request.responseText);
-                result.innerHTML += "<h2>우리 팀의 팀명은 "+jsonDOM.teamName+"입니다.</h2>";
+                result.innerHTML = "<h2>우리 팀의 팀명은 "+jsonDOM.teamName+"입니다.</h2>";
             }
         };
         request.open('GET', '/myteam', true);

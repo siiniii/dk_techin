@@ -1,5 +1,5 @@
 package com.example.springedu.domain;
-public class ProductVO {
+public class ProductDTO {
 	private int apple;
 	private int banana;
 	private int halabong;

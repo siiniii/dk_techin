@@ -17,7 +17,7 @@ public class UploadController4 {
 	     String result="OK";
 	     try {
 	    	 content =  mfile.getBytes();
-	    	 File f = new File("c:/uploadtest/"+fileName);
+	    	 File f = new File("/Users/sini/Back/Temp/uploadtest/"+fileName);
 	   		 FileOutputStream fos = new FileOutputStream(f);
 	   		 fos.write(content);
 	   		 fos.close();	   		 
@@ -30,7 +30,7 @@ public class UploadController4 {
 	@RequestMapping(value="/canvasdownload",
 			 produces="text/plain; charset=utf-8")	
 	public String downloadFile() {	    
-		String path = "C:/uploadtest/";
+		String path = "/Users/sini/Back/Temp/uploadtest/";
 		char[] buffer =  null;		
 		try {
 			FileReader reader = new FileReader(path+"test.png");
