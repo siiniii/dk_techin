@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lab1">
+    <select id="exam1"  resultType="BookMybatisDTO">
+        SELECT id, title, price, kind FROM book
+    </select>
+
+    <select id="exam2"  resultType="BookMybatisDTO">
+        SELECT id, title, price, kind FROM book ORDER BY price DESC
+    </select>
+
+    <select id="exam3"  resultType="BookMybatisDTO">
+        SELECT title, price FROM book WHERE price>= 20000
+    </select>
+
+    <select id="exam4"  resultType="BookMybatisDTO">
+        SELECT title, price FROM book WHERE kind = 'b02'
+    </select>
+
+    <select id="exam5"  resultType="BookMybatisDTO">
+        SELECT title, price FROM book WHERE kind = 'b04' OR kind = 'b05'
+    </select>
+
+    <select id="exam6"  resultType="BookMybatisDTO" parameterType="string">
+        SELECT title, price FROM book WHERE title LIKE concat('%',#{key},'%')
+    </select>
+
+    <select id="exam7"  resultType="BookMybatisDTO">
+        SELECT kind, AVG(price) price FROM book WHERE kind IS NOT NULL GROUP BY kind
+    </select>
+
+    <insert id="insertBookData"  parameterType="BookMybatisDTO">
+        insert into meeting (title, price, kind) values (#{title}, #{price}, #{kind})
+    </insert>
+</mapper>

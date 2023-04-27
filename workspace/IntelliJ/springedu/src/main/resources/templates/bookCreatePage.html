@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+</head>
+<body>
+    <h1>입력된 도서 정보</h1>
+    <hr>
+    <h3 onclick="loadeBookList">전체 리스트 보기</h3>
+
+    <hr>
+<div>
+    <table th:if="${list}">
+        <tr th:each="dto : ${list}">
+            <td>[[${dto.id}]]</td>
+            <td>[[${dto.title}]]</td>
+            <td>[[${dto.price}]]</td>
+            <td>[[${dto.kind}]]</td>
+        </tr>
+    </table>
+    <h3 th:if="${msg}" th:text="${msg}"></h3>
+</div>
+
+</body>
+</html>

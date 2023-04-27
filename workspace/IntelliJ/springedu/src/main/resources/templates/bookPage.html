@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+</head>
+<body>
+    <h1>책 정보 출력</h1>
+    <hr>
+    <a href = "/bookinfo/b1"><button>모든 도서</button></a>
+    <a href = "/bookinfo/b2"><button>가격 높은 순으로</button></a>
+    <a href = "/bookinfo/b3"><button>가격이 20000원 보다 높은 도서</button></a>
+    <a href = "/bookinfo/b4"><button>웹프로그래밍 도서</button></a>
+    <a href = "/bookinfo/b5"><button>데이터베이스와 인프라 도서</button></a>
+    <a href = "/bookinfo/b6"><button>도서명에 자바를 포함하는 도서</button></a>
+    <a href = "/bookinfo/b7"><button>도서명에 스프링을 포함하는 도서</button></a>
+    <a href = "/bookinfo/b8"><button>분류별 도서 가격의 평균</button></a>
+    <hr>
+<div>00
+    <table th:if="${list}">
+        <tr th:each="dto : ${list}">
+            <td>[[${dto.id}]]</td>
+            <td>[[${dto.title}]]</td>
+            <td>[[${dto.price}]]</td>
+            <td>[[${dto.kind}]]</td>
+        </tr>
+    </table>
+    <h3 th:if="${msg}" th:text="${msg}"></h3>
+</div>
+
+</body>
+</html>
