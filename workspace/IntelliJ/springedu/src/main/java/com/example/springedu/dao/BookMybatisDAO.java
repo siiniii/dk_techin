@@ -101,7 +101,7 @@ public class BookMybatisDAO {
 
     public boolean insert(BookMybatisDTO bookMybatisDTO) {
         boolean result = true;
-        String statement = "lab.insertData";
+        String statement = "lab1.insertBookData";
         if(session.insert(statement,bookMybatisDTO) != 1)
             result = false;
         return result;
