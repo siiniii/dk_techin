@@ -16,7 +16,7 @@
     <a href = "/bookinfo/b7"><button>도서명에 스프링을 포함하는 도서</button></a>
     <a href = "/bookinfo/b8"><button>분류별 도서 가격의 평균</button></a>
     <hr>
-<div>00
+<div>
     <table th:if="${list}">
         <tr th:each="dto : ${list}">
             <td>[[${dto.id}]]</td>

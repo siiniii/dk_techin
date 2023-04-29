@@ -32,6 +32,6 @@
     </select>
 
     <insert id="insertBookData"  parameterType="BookMybatisDTO">
-        insert into meeting (title, price, kind) values (#{title}, #{price}, #{kind})
+        insert into book (title, price, kind) values (#{title}, #{price}, #{kind})
     </insert>
 </mapper>

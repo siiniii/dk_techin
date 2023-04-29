@@ -5,22 +5,52 @@
     <title>book</title>
 </head>
 <body>
+    <th:block th:unless="${ newBook }" >
+    <h1>도서 정보 입력</h1>
+    <hr>
+    <form method="post" action="/bookCreate">
+        <table>
+            <tr>
+                <td >도서명을 입력하세요 : <input name="title"></td>
+            </tr>
+            <tr>
+                <td>가격을 입력하세요 : <input name="price"></td>
+            </tr>
+            <tr>
+                <td>도서분류를 선택해주세요. <br>
+                    <input type="radio" value="b01" name="kind"> 1. 프로그래밍 언어
+                    <input type="radio" value="b02" name="kind"> 2. 웹 프로그래밍
+                    <input type="radio" value="b03" name="kind"> 3. 빅데이터
+                    <input type="radio" value="b04" name="kind"> 4. 데이터베이스
+                    <input type="radio" value="b05" name="kind"> 5. 인프라
+                </td>
+            </tr>
+        </table>
+        <button type="submit">도서 정보 등록하기</button>
+        <button type="reset">초기화</button>
+    </form>
+    </th:block>
+
+    <th:block th:if="${ newBook }" >
     <h1>입력된 도서 정보</h1>
     <hr>
-    <h3 onclick="loadeBookList">전체 리스트 보기</h3>
-
+        <table>
+            <tr>
+                <td>[[${newBook.id}]]</td>
+                <td>[[${newBook.title}]]</td>
+                <td>[[${newBook.price}]]</td>
+                <td>[[${newBook.kind}]]</td>
+            </tr>
+        </table>
+    <hr>
+        <h3><a href = "/bookinfo/b1">전체 리스트 보기</a></h3>
     <hr>
 <div>
-    <table th:if="${list}">
-        <tr th:each="dto : ${list}">
-            <td>[[${dto.id}]]</td>
-            <td>[[${dto.title}]]</td>
-            <td>[[${dto.price}]]</td>
-            <td>[[${dto.kind}]]</td>
-        </tr>
-    </table>
-    <h3 th:if="${msg}" th:text="${msg}"></h3>
 </div>
+    </th:block>
 
+    <th:block th:if="${msg}" >
+    <h3 th:text="${msg}"></h3>
+    </th:block>
 </body>
 </html>

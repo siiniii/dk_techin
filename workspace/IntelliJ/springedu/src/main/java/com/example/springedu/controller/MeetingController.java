@@ -2,6 +2,7 @@ package com.example.springedu.controller;
 
 import java.util.List;
 
+import com.example.springedu.dao.MeetingMapperDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,12 @@ import com.example.springedu.domain.MeetingDTO;
 import com.example.springedu.domain.ReplyVO;
 @Controller
 public class MeetingController  {
+//	@Autowired
+//	MeetingMyBatisDAO dao;
+
 	@Autowired
-	MeetingMyBatisDAO dao;
+	MeetingMapperDAO dao;
+
 	@GetMapping("/meeting")
 	public ModelAndView list() {
 		List<MeetingDTO> list = dao.listM();
