@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.*;
 import java.io.IOException;
 
-//@Component
+@Component
 @Slf4j
 @Order(1)
 public class TestFilter2 implements Filter {
