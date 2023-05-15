@@ -11,7 +11,7 @@ import org.springframework.util.StopWatch;
 @Aspect
 @Slf4j
 public class AOPLab3 {
-    @Around("execution(public * com.example.springedu.controller.EmpController.*())")
+    @Around("within(*..controller.EmpController)")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
         StopWatch sw = new StopWatch();
         sw.start();
