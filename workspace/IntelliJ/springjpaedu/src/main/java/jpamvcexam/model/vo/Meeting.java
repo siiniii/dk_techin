@@ -10,7 +10,7 @@ public class Meeting {
 	private int id;
 	private String name;
 	private String title;
-	@Column(columnDefinition = "TIMESTAMP")
+	//@Column(columnDefinition = "TIMESTAMP")
 	private LocalDateTime  meetingDate;
 	
 	public int getId() {

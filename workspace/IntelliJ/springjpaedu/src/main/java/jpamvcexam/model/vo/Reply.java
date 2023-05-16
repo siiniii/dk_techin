@@ -9,7 +9,8 @@ public class Reply {
 	private int id;
 	private String name;
 	private String content;
-	@ManyToOne( optional = false ) 
+	@ManyToOne( optional = false )
+	@JoinColumn(name = "refid")
 	private Meeting refid;
 	public int getId() {
 		return id;

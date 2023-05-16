@@ -13,7 +13,7 @@ public class Visitor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	//@CreationTimestamp
+	@CreationTimestamp
 	private java.sql.Date writeDate;
 	private String memo;
 	
