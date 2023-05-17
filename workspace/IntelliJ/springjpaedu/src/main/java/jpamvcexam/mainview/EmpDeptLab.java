@@ -30,7 +30,7 @@ public class EmpDeptLab {
             if(list.size() == 0) {
                 System.out.println("부서명을 찾을 수 없네요..ᅮᅮ");
             } else {
-                System.out.printf("%s 부서의 직원들입니다... \n ", input);
+                System.out.printf("%s 부서의 직원들입니다...", input);
                 list.stream().forEach(System.out::println);
 
             }

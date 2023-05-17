@@ -38,10 +38,6 @@ public class Dept {
 
     @Override
     public String toString() {
-        return "Dept{" +
-                "DEPTNO=" + DEPTNO +
-                ", DNAME='" + DNAME + '\'' +
-                ", LOC_CODE='" + LOC_CODE + '\'' +
-                '}';
+        return  DNAME;
     }
 }

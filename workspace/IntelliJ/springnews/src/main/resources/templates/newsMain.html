@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>newsmain</title>
+</head>
+<body>
+<h1 style="text-align: center; color: aquamarine">뉴스 게시판</h1>
+
+<table style="width:600px; margin:0 auto; border: 1px;">
+    <tr style="background-color:orange;height:30px">
+        <th style="width:100px">번호</th>
+        <th style="width:300px">제목</th>
+        <th style="width:125px">작성자</th>
+        <th style="width:125px">작성일</th>
+        <th style="width:50px">조회수</th>
+    </tr>
+    <tr th:each="allNews:${allNews}">
+        <td>[[${allNews.id}]]</td>
+        <td>[[${allNews.title}]]</td>
+        <td>[[${allNews.writer}]]</td>
+        <td>[[${allNews.writedate}]]</td>
+        <td>[[${allNews.cnt}]]</td>
+    </tr>
+</table>
+
+</body>
+</html>
