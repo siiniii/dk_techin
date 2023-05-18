@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 700px;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 10px;
+}
+
+input[type="text"], textarea {
+    width: 580px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: vertical;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttons input[type="submit"], .buttons input[type="reset"], .buttons input[type="button"] {
+    height: 25px;
+    padding: 0 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.buttons input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.buttons input[type="reset"], .buttons input[type="button"] {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    margin-left: 10px;
+}

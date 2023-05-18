@@ -33,12 +33,11 @@ public class News {
 	@Column(nullable = false)
 	public String content;
 	@CreationTimestamp
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "writedate", nullable = false)
 	public LocalDateTime writedate;
 
 	@Column
 	@ColumnDefault("0")
-	public Integer cnt;
+	public int cnt;
 
 }

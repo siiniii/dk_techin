@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>newsUpdate</title>
+    <link rel="stylesheet" href="/css/updateNews.css">
+
+</head>
+<body>
+<h1>뉴스 수정</h1>
+
+<form th:action="@{/update}" th:method="post" class="modifyForm" role="form">
+    <table>
+        <input type="hidden" name="id" th:value="${news.id}">
+        <tr>
+            <th>제목</th>
+            <td><input type="text" name="title" th:field="*{news.title}" ></td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td><input type="text" name="writer" th:field="*{news.writer}" ></td>
+        </tr>
+        <tr>
+            <th>조회수</th>
+            <td><input type="text" name="cnt" th:field="*{news.cnt}"  readonly></td>
+        </tr>
+        <tr>
+            <th>등록일자</th>
+            <td><input type="text" name="writedate" th:field="*{news.writedate}"  readonly></td>
+        </tr>
+        <tr>
+            <th>글내용</th>
+            <td><input type="text" name="content" th:field="*{news.content}" ></td>
+        </tr>
+    </table>
+
+    <br><br>
+    <div><button type="submit">수정내용 저장</button></div>
+</form>
+</body>
+</html>

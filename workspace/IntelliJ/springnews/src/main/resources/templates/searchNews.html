@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>searchNews</title>
+    <link rel="stylesheet" href="/css/writerNews.css">
+    <link rel="stylesheet" href="/css/btn.css">
+</head>
+<body>
+<h1>검색한 뉴스 게시판</h1>
+<th:block th:if="${news}">
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="news:${news}">
+            <td>[[${news.id}]]</td>
+            <td th:onclick="|location.href='@{/list/{id}(id=${news.id})}'|">[[${news.title}]]</td>
+            <td>[[${news.writer}]]</td>
+            <td th:text="${#temporals.format(news.writedate, 'yyyy-MM-dd')}"></td>
+            <td>[[${news.cnt}]]</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="btn-container">
+        <button th:onclick="|location.href='@{/newsmain}'|" class="w-btn-outline w-btn-gray-outline" type="button">전체목록보기</button>
+    </div>
+</th:block>
+<th:block th:if="${msg}">
+    <h3 style="text-align: center">[[${msg}]]</h3>
+</th:block>
+</body>
+</html>

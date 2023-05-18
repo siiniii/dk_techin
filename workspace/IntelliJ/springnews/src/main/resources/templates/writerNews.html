@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>writerNews</title>
+    <link rel="stylesheet" href="/css/writerNews.css">
+    <link rel="stylesheet" href="/css/btn.css">
+</head>
+<body>
+<h1>작성자 기사조회 뉴스 게시판</h1>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회수</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="news:${news}">
+        <td th:text="${news.id}"></td>
+        <td th:onclick="|location.href='@{/list/{id}(id=${news.id})}'|">[[${news.title}]]</td>
+        <td>[[${news.writer}]]</td>
+        <td th:text="${#temporals.format(news.writedate, 'yyyy-MM-dd')}"></td>
+        <td>[[${news.cnt}]]</td>
+    </tr>
+    </tbody>
+</table>
+<div class="btn-container">
+    <button th:onclick="|location.href='@{/newsmain}'|" class="w-btn-outline w-btn-gray-outline" type="button">전체목록보기</button>
+</div>
+</body>
+</html>

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.springedu2", "springjpa.exam"})
+@ComponentScan(basePackages = {"com.example.springedu2", "springjpa.exam", "springrest.exam"})
 @EnableJpaRepositories(basePackages = {"springjpa.exam.repository"})
 @EntityScan(basePackages = {"springjpa.exam.entity"})
 public class Springedu2Application {

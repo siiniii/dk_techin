@@ -2,27 +2,92 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>newsmain</title>
+    <title>newsMain</title>
+    <link rel="stylesheet" href="/css/newsMain.css">
 </head>
 <body>
-<h1 style="text-align: center; color: aquamarine">뉴스 게시판</h1>
-
-<table style="width:600px; margin:0 auto; border: 1px;">
-    <tr style="background-color:orange;height:30px">
-        <th style="width:100px">번호</th>
-        <th style="width:300px">제목</th>
-        <th style="width:125px">작성자</th>
-        <th style="width:125px">작성일</th>
-        <th style="width:50px">조회수</th>
+<div class="container">
+    <div class="left-align">
+        <button th:onclick="|location.href='@{/insert}'|" class="w-btn-outline w-btn-gray-outline" type="button">뉴스 작성</button>
+    </div>
+    <h1 class="center-align">뉴스 게시판</h1>
+    <form id="search-form" method="get" action="/search">
+        <input type="search" name="keyword" placeholder="검색어 입력">
+        <button id="search" class="w-btn-outline w-btn-gray-outline" type="submit">검색</button>
+    </form>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회수</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each="allNews:${allNews}">
-        <td>[[${allNews.id}]]</td>
-        <td>[[${allNews.title}]]</td>
-        <td>[[${allNews.writer}]]</td>
-        <td>[[${allNews.writedate}]]</td>
-        <td>[[${allNews.cnt}]]</td>
+        <td th:text = "${allNews.id}"></td>
+        <td th:onclick="|location.href='@{/list/{id}(id=${allNews.id})}'|">[[${allNews.title}]]</td>
+        <td th:onclick="|location.href='@{/writer/{writer}(writer=${allNews.writer})}'|">[[${allNews.writer}]]</td>
+        <td th:text="${#temporals.format(allNews.writedate, 'yyyy-MM-dd')}"></td>
+        <td th:text="${allNews.cnt}"></td>
     </tr>
+    </tbody>
 </table>
+<div th:if="${totalPages > 1}">
+    <ul class="pagination">
+        <li id="prevButton" onclick="goToPreviousPage()" th:class="${currentPage == 1 ? 'disabled' : ''}">
+            <a>&laquo;</a>
+        </li>
+        <li onclick="goToPreviousPage()" th:class="${currentPage == 1 ? 'disabled' : ''}">
+            <a>&lsaquo;</a>
+        </li>
+        <li th:each="page : ${#numbers.sequence(1, totalPages)}"
+            th:class="${page == currentPage ? 'active' : ''}">
+            <a th:href="@{/newsmain(page=${page})}" th:text="${page}"></a>
+        </li>
+        <li onclick="goToNextPage()" th:class="${currentPage == totalPages ? 'disabled' : ''}">
+            <a>&rsaquo;</a>
+        </li>
+        <li id="nextButton" onclick="goToNextPage()" th:class="${currentPage == totalPages ? 'disabled' : ''}">
+            <a>&raquo;</a>
+        </li>
+    </ul>
+</div>
 
 </body>
+<script th:inline="javascript">
+    var currentPage = [[${currentPage}]];
+    var totalPages = [[${totalPages}]];
+
+    // 이전 페이지로 이동
+    function goToPreviousPage() {
+        if (currentPage > 1) {
+            location.href = '/newsmain?page=' + (currentPage - 1);
+        }
+    }
+
+    // 다음 페이지로 이동
+    function goToNextPage() {
+        if (currentPage < totalPages) {
+            location.href = '/newsmain?page=' + (currentPage + 1);
+        }
+    }
+
+    // 페이지 로딩 시 버튼 상태 설정
+    window.onload = function() {
+        var prevButton = document.getElementById('prevButton');
+        var nextButton = document.getElementById('nextButton');
+
+        if (currentPage === 1) {
+            prevButton.classList.add('disabled');
+        }
+
+        if (currentPage === totalPages) {
+            nextButton.classList.add('disabled');
+        }
+    };
+</script>
 </html>

@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #7A7067;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th:first-child, table td:first-child {
+    width: 10%;
+}
+
+table th:nth-child(2), table td:nth-child(2) {
+    width: 40%;
+}
+
+table th:nth-child(3), table td:nth-child(3) {
+    width: 20%;
+}
+
+table th:nth-child(4), table td:nth-child(4),
+table th:nth-child(5), table td:nth-child(5) {
+    width: 10%;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-container button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
