@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -17,6 +17,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
+@Table(name = "visitor")
 public class Visitor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,5 +26,5 @@ public class Visitor {
 	@CreationTimestamp
 	@Column(name = "writedate")
 	private java.sql.Date writeDate;
-	private String memo;	
+	private String memo;
 }

@@ -70,9 +70,9 @@ public class BoardController {
 
 		Board board = new Board();
 		board.setBoardNo(boardNo);
-	 	int index = boardList.indexOf(board);
+		int index = boardList.indexOf(board);
 		if (index >= 0)
-			 board = boardList.get(index);
+			board = boardList.get(index);
 
 		ResponseEntity<Board> entity = new ResponseEntity<>(board, HttpStatus.OK);
 
@@ -109,5 +109,5 @@ public class BoardController {
 
 		return entity;
 	}
-	
+
 }

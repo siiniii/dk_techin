@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +17,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
+@Table(name = "member")
 public class Member {
 	@Id
 	@Column(name = "MEMBER_ID")
@@ -27,13 +28,14 @@ public class Member {
 	@ManyToOne
 	@JoinColumn(name = "TEAM_ID")
 	private Team team;
-	
+
 	public Member() {
-		
+
 	}
+
 	public Member(String username, Team team) {
 		super();
 		this.username = username;
 		this.team = team;
-	}	
+	}
 }

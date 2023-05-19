@@ -1,21 +1,23 @@
 package springrest.exam.domain;
 
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Getter
 @NoArgsConstructor
+@ToString
 public class Message {
-    private String message1;
-    private String message2;
-    private String message3;
-    @Builder
-    public Message(String msg1, String msg2, String msg3) {
-        this.message1 = msg1;
-        this.message2 = msg2;
-        this.message3 = msg3;
-        System.out.println("@Builder 가 설정된 생성자 호출");
-    }
+	private String message1;
+	private String message2;
+	private String message3;
+
+	@Builder
+	public Message(String msg1, String msg2, String msg3) {
+		this.message1 = msg1;
+		this.message2 = msg2;
+		this.message3 = msg3;
+		System.out.println("@Builder 가 설정된 생성자 호출");
+	}
 }

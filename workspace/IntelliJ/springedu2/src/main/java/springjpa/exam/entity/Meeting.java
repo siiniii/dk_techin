@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -19,6 +19,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Table(name = "meeting")
 public class Meeting {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +27,6 @@ public class Meeting {
 	private String name;
 	private String title;
 	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-	@Column(name="meetingdate")
-	private LocalDateTime  meetingDate;	
+	@Column(name = "meetingdate")
+	private LocalDateTime meetingDate;
 }
