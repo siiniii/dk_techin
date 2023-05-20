@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>ComicActor</title>
+</head>
+<body>
+<h1 style="text-align: center">1조의 REST API 실습</h1>
+<hr>
+<div style="text-align: center">
+    <button id="load-all">둘리와 친구들 보기</button>
+</div>
+<hr>
+<div id="btns" style="text-align: center">
+</div>
+<div id="info" style="text-align: center">
+</div>
+</body>
+
+<script th:inline="javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script th:inline="javascript">
+
+    // 버튼 만들어지기
+    $(function () {
+        $('#load-all').on('click', function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: 'all',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var btns = $('#btns');
+                    btns.empty();
+
+                    $.each(data._embedded.comicActorModelList, function (index, actor) {
+                        var actorName = actor.name;
+                        var button = $('<button>').attr('id', actorName).text(actorName);
+                        btns.append(button);
+                    });
+                },
+                error: function (xhr, status, err) {
+                    alert(err);
+                }
+            });
+
+        });
+    });
+
+
+    // 둘리 정보 띄우기
+    $(function () {
+        $(document).on('click', 'button', function (event) {
+            let actorName = $(this).attr('id');
+            if (actorName == "둘리") {
+                $.ajax({
+                    url: '/dooly',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        const doolyInfo = $('#info');
+                        doolyInfo.empty();
+
+                        const name = $('<h1>').text(data.name);
+                        const address = $('<h2>').text(data.addr);
+                        const image = $('<img>').attr('src', "images/" + data.image);
+
+                        doolyInfo.append(name);
+                        doolyInfo.append(address);
+                        doolyInfo.append(image);
+                    },
+                    error: function (xhr, status, error) {
+                        alert(err);
+                    }
+                });
+            }
+            ;
+        });
+    });
+
+    // 또치 정보 띄우기
+    $(function () {
+        $(document).on('click', 'button', function (event) {
+            let actorName = $(this).attr('id');
+
+            if (actorName == "또치") {
+                $.ajax({
+                    url: '/ddochi',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        const doolyInfo = $('#info');
+                        doolyInfo.empty();
+
+                        const name = $('<h1>').text(data.name);
+                        const address = $('<h2>').text(data.addr);
+                        const image = $('<img>').attr('src', "images/" + data.image);
+
+                        doolyInfo.append(name);
+                        doolyInfo.append(address);
+                        doolyInfo.append(image);
+                    },
+                    error: function (xhr, status, error) {
+                        alert(err);
+                    }
+                });
+            }
+            ;
+        });
+    });
+
+    // 도우너 정보 띄우기
+    $(function () {
+        $(document).on('click', 'button', function (event) {
+            let actorName = $(this).attr('id');
+            if (actorName == "도우너") {
+                $.ajax({
+                    url: '/dauner',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        const doolyInfo = $('#info');
+                        doolyInfo.empty();
+
+                        const name = $('<h1>').text(data.name);
+                        const address = $('<h2>').text(data.addr);
+                        const image = $('<img>').attr('src', "images/" + data.image);
+
+                        doolyInfo.append(name);
+                        doolyInfo.append(address);
+                        doolyInfo.append(image);
+                    },
+                    error: function (xhr, status, error) {
+                        alert(err);
+                    }
+                });
+            }
+            ;
+        });
+    });
+
+</script>
+</html>
