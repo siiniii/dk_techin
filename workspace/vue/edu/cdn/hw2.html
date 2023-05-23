@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js sample</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+<h1>입력폼 활용</h1>
+	<style>
+
+	</style>
+
+	<div id="app">
+		<a>이름 : </a><input v-model.lazy="inputName" placeholder="이름">
+		<p>좋아하는 색은 : </p>
+		<label><input type="radio" value="red" v-model="favColor">빨강</label><br>
+		<label><input type="radio" value="green" v-model="favColor">녹색</label><br>
+		<label><input type="radio" value="blue" v-model="favColor">파란색</label><br>
+		<label><input type="radio" value="yellow" v-model="favColor">노란색</label><br>
+		<label><input type="radio" value="grey" v-model="favColor">회색</label><br>
+		<p :style="{color:favColor}">내 이름은 {{ inputName }} 이고 좋아하는 색은 {{favColor}}입니다.</p>
+	</div>
+
+	<script>
+		const { createApp } = Vue
+		createApp({
+			data() {
+				return {
+					inputName:'',
+					favColor: '',
+				}
+			}
+		}).mount('#app')
+	</script>
+</body>
+
+</html>

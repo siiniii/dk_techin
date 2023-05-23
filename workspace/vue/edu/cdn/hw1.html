@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js sample</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+	<h2>다양한 바인딩</h2>
+	<style>
+		.blue-underline {
+			text-decoration: underline;
+			color: blue;
+		}
+
+		.strike-through {
+			text-decoration: line-through;
+			color: lightgray
+		}
+
+		.dark {
+			background-color: darkgray;
+		}
+	</style>
+
+	<div id="app">
+		<p><a :href="url">다음으로 연결</a></p>
+		<p><img :src="image">clover.png 표시</img></p>
+		<p :style="{textAlign:align1}">텍스트를 왼쪽 정렬</p>
+		<p :style="{textAlign:align2}">텍스트를 오른쪽 정렬</p>
+		<p :style="{textAlign:align3}">텍스트를 가운데 정렬</p>
+		<p :style="{color:color}">인라인 스타일로 글자색을 빨간색으로</p>
+		<p :style="{color:color,fontSize:size}">인라인 스타일로 글자크기를 150% 크게 빨간색으로</p>
+		<p :style="{color:color,fontSize:size,backgroundColor:backColor}">
+			인라인 스타일로 글자크기를 150% 크게 빨간색으로 배경은 노란색으로</p>
+		<p :class="blue">blue-underline class 지정</p>
+		<p :class="[blue, blueDark]">blue-underline, dark class 지정</p>
+	</div>
+
+	<script>
+		const { createApp } = Vue
+		createApp({
+			data() {
+				return {
+					url: 'http://www.daum.net',
+					image: 'images/clover.png',
+					align1: 'left',
+					align2: 'right',
+					align3: 'center',
+					color: 'red',
+					size: '150%' ,
+					backColor: 'yellow',
+					blue: 'blue-underline',
+					blueDark: 'dark'
+				}
+			}
+		}).mount('#app')
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw4</title>
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<h1>숫자 버튼 만들기와 클릭 이벤트 처리</h1>
+<div id="app">
+  <button value="{{n}}" v-for="n in 10" @click="loadImg(n)">{{n}}</button>
+  <hr>
+  <img :src="no"/>
+</div>
+</body>
+<script>
+  const { createApp } = Vue
+  createApp({
+    data() {
+      return{ no: '' }
+    },
+    methods: {
+      loadImg: function (n) {
+        this.no = 'images/'+ n +'.jpg';
+      }
+    }
+  }).mount('#app')
+
+</script>
+</html>
