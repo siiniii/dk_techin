@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Vue.js sample</title>
-		<link rel="stylesheet" href="style.css" >
-		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	</head>
-	<body>
-        <h2>각각 다른 카운팅을 하는 컴포넌트 예제</h2>
-		<div id="app">
-			<my-component></my-component>
-			<my-component></my-component>
-			<my-component></my-component>
-		</div>
-        <script>
-            const  {createApp}  = Vue;
+    <head>
+        <meta charset="UTF-8" />
+        <title>Vue.js sample</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
 
-            const MyComponent = {
-				template: '<p class="my-comp">카운터  <button v-on:click="addOne">추가</button> {{ count }}</p>',
-				data: function () {
-					return {
-						count: 0
-					}
-				},
-				methods: {
-					addOne: function() {
-						this.count++;
-					}
-				}
-			}
-			createApp({
-					components: {
-					    'my-component': MyComponent
-				    }
-			}).mount('#app');
+    <body>
+        <h1>watch 뽀개기</h1>
+        <div id="app">
+            <button @click="updateStr">문자열 변경</button>
+            {{someStr}}
+            <hr />
+            <button @click="updateNum">숫자 변경</button>
+            {{someNum}}
+            <hr />
+            <button @click="updateObj1">객체 변경</button>
+            {{someObj}}
+            <hr />
+            <button @click="updateObj2">객체 내용 변경</button>
+            {{someObj}}
+            <hr />
+        </div>
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+                        someStr: "가나다",
+                        someNum: 100,
+                        someObj: {
+                            a: "obj-a",
+                            b: "obj-b",
+                            c: "obj-c",
+                        },
+                    };
+                },
+                watch: {
+                    someStr: {
+                        handler: function (val, oldVal) {
+                            console.log(`[someStr] ${val}-${oldVal}`);
+                        },
+                    },
+                    someNum: {
+                        handler: function (val, oldVal) {
+                            console.log(`[someNum] ${val}-${oldVal}`);
+                        },
+                    },
+                    someObj: {
+                        handler: function (val, oldVal) {
+                            console.log(`[someObj] ${val}-${oldVal}`);
+                        },
+                    },
+                    "someObj.a": {
+                        handler: function (val, oldVal) {
+                            console.log(`[someObj.a] ${val}-${oldVal}`);
+                        },
+                    },
+                },
+                methods: {
+                    updateStr: function () {
+                        this.someStr += "ㅋ";
+                    },
+                    updateNum: function () {
+                        this.someNum++;
+                    },
+                    updateObj1: function () {
+                        this.someObj = {};
+                    },
+                    updateObj2: function () {
+                        this.someObj.a += "ㅋ";
+                    },
+                },
+            }).mount("#app");
         </script>
-		<style>
-			.my-comp {
-				width: 300px;
-				background-color: #ffffe0;
-				border: solid;
-				border-color: darkorange;
-				border-radius: 8px;
-				padding: 8px;
-			}
-		</style>        
     </body>
 </html>

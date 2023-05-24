@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Vue.js sample</title>
-		<link rel="stylesheet" href="style.css" >
-		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	</head>
-	<body>
-        <h2>배열에서 컴포넌트를 만들어 표시하기</h2>
-		<div id="app">
-			<my-component v-for="(item, index) in myArray" v-bind:my-name="item" ></my-component>
-		</div>
-        <script>
-            const  {createApp}  = Vue;
+<html lang="en">
 
-            const MyComponent = {
-				template: '<p class="my-comp">나는 {{ myName }} 입니다.</p>',
-				props: {
-					myName: String
-				}
-			}
-			createApp({
-				data() {
-					return { myArray : ['둘리', '또치', '도우너', '마이콜', '희동이']}
-				},
-				components: {
-					'my-component': MyComponent
-				}
-			}).mount('#app');
-        </script>
-		<style>
-			.my-comp {
-				width: 300px;
-				background-color: #ffffe0;
-				border: solid;
-				border-color: darkorange;
-				border-radius: 8px;
-				padding: 8px;
-			}
-		</style>        
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        [v-cloak]::before {
+            content: '로딩중...'
+        }
+
+        [v-cloak]>* {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>v-cloak 디렉티브</h2>
+    <hr>
+    <div id="app">
+        <h1>v-cloak 을 사용하지 않은 태그 - {{msg}}</h1>
+        <div v-cloak>
+            <h1>v-cloak 을 사용한 태그 - {{msg}}</h1>
+        </div>
+    </div>
+    <script>
+        setTimeout(function () {
+            Vue.createApp({
+                data() {
+                    return {
+                        msg: "hello"
+                    }
+                }
+            }).mount("#app")
+        }, 3000);
+    </script>
+</body>
+
 </html>

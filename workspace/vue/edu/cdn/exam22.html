@@ -9,44 +9,28 @@
 </head>
 
 <body>
-	<h2>컴포넌트를 만들어서 표시</h2>
 	<div id="app">
-		<my-comp-tag1></my-comp-tag1>
-		<my-comp-tag2></my-comp-tag2>
-		<my-comp-tag3></my-comp-tag3>
+		<p v-if="isDisplay">v-if : 개발자 도구에서 엘리먼트 정보 확인</p>
+		<p v-show="isDisplay">v-show : 개발자 도구에서 엘리먼트 정보 확인</p>
 		<hr>
-		<my-comp-tag1></my-comp-tag1>
+		<button @click="isDisplay =  !isDisplay">클릭</button>
+		<hr>
+		<input type="text" v-model="friendName" />
+		<h3 v-if="friendName === '둘리'">고길동</h3>
+		<h3 v-else-if="friendName === '올라프'">안나</h3>
+		<h3 v-else-if="friendName === '짱구'">흰둥이</h3>
+		<h3 v-else>앤</h3>
 	</div>
 	<script>
-		const { createApp } = Vue;
-
-		const MyComponent1 = {
-			template: '<p class="my-comp">안녕? 둘리~~</p>'
-		}
-		const MyComponent2 = {
-			template: '<p class="my-comp">안녕? 도우너~~</p>'
-		}
-		const MyComponent3 = {
-			template: '<p class="my-comp">안녕? 또치~~</p>'
-		}
-		createApp({
-			components: {
-				'my-comp-tag1': MyComponent1,
-				'my-comp-tag2': MyComponent2,
-				'my-comp-tag3': MyComponent3,
+		Vue.createApp({
+			data() {
+				return {
+					isDisplay: true,
+					friendName: '둘리'
+				}
 			}
-		}).mount('#app');
+		}).mount('#app')
 	</script>
-	<style>
-		.my-comp {
-			width: 300px;
-			background-color: #ffffe0;
-			border: solid;
-			border-color: darkorange;
-			border-radius: 8px;
-			padding: 8px;
-		}
-	</style>
 </body>
 
 </html>
