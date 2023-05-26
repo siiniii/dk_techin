@@ -178,6 +178,20 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+### Vue ###
+# gitignore template for Vue.js projects
+#
+# Recommended template: Node.gitignore
+
+
+### Vuejs ###
+# Recommended template: Node.gitignore
+
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
 ##
 
 tools/
