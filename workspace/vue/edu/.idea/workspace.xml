@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fcb1cebf-d023-497e-93e4-a22fc3ce94d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cdn/exam10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam1_0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam1_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam1_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam1_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam1_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam21.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam22.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam23.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam24.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam25.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/exam9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/g_chart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/hw1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/hw2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/hw3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/hw4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdn/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2Q7xZKyrQlKM735SnUF2nPY5Tl9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/sini/Back/kosa/workspace/vue/edu/cdn",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cdn" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cdn" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fcb1cebf-d023-497e-93e4-a22fc3ce94d5" name="Changes" comment="" />
+      <created>1684718476549</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684718476549</updated>
+      <workItem from="1684718477776" duration="560000" />
+      <workItem from="1684719093203" duration="7808000" />
+      <workItem from="1684800275421" duration="465000" />
+      <workItem from="1684800909742" duration="67000" />
+      <workItem from="1684800983512" duration="346000" />
+      <workItem from="1684804097517" duration="14570000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
