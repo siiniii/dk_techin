@@ -1,0 +1,42 @@
+version: "1"
+services:
+  mysqledu3:
+    image: mysql:8
+    networks:
+      - edu3net
+    volumes:
+      - mysqledu3vol:/var/lib/mysql
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: rootroot
+      MYSQL_DATABASE: edudb
+      MYSQL_USER: jdbctest
+      MYSQL_PASSWORD: jdbctest
+    ports:
+      - 3306:3306
+
+  springedu3:
+    depends_on:
+      - mysqledu3
+    image: edu3
+    networks:
+      - edu3net
+    ports:
+      - 8088:8088
+    restart: on-failure
+
+  springedu2:
+    depends_on:
+      - mysqledu3
+    image: edu2
+    networks:
+      - edu3net
+    ports:
+      - 8089:8088
+    restart: on-failure
+
+networks:
+  edu3net:
+volumes:
+  mysqledu3vol:
