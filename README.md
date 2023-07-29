@@ -1,11 +1,5 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=FEE500&height=150&section=header&text=Based%20on%20MSA%20Full%20Stack%20Developer-nl-Training%20Course%20with&fontSize=40)
+![header](https://capsule-render.vercel.app/api?type=soft&color=FEE500&height=150&section=header&text=Based%20on%20MSA%20Full%20Stack%20Developer-nl-Training%20Course%20fontSize=40)
 
-<div align="center">
-
-![dktechin_Logo](https://user-images.githubusercontent.com/110361222/227942032-e1ed4203-b0ec-4dbc-a70f-59a1528e0696.jpg)
-<br /><br />
-
-</div>
 
 # <p align="center">🖥️I learning in this course</p>
 
